@@ -1,0 +1,46 @@
+{
+  "commit": "f500fd0e14ba17f12779f5f622349d2a2c39ba5c",
+  "sources": {
+    "src/codetrace/__init__.py": "6f1d43ce8a37def9391e3494a94933cb5a313575e01168bc73096bb4a447315d",
+    "src/codetrace/__main__.py": "7719f610fb1d21a7b1fa38a0058dcc1fa60dd95dc071d784d5ebdff150f89e3e",
+    "src/codetrace/cli.py": "f28571c4c63786de2ee76626713c81b25b1cb0bc95695393bcde9a416054425b",
+    "src/codetrace/contracts.py": "e8c220414dba1678b8675365869d11a00b820809f95cec725152ec42a1426d74",
+    "src/codetrace/evaluation.py": "9b1a06ff4a9df6e02445f037d26c9b9ca33371ccaadbca3892f5c4592c45068f",
+    "src/codetrace/evidence.py": "fd91bb44f97680d5866d3ad620b41812966cd508da62159d23fbc51ea4c8a238",
+    "src/codetrace/graph.py": "f94a32ef47bc193156b0427032cda6f42f49c2040d66d86e86c174b3f4fa3344",
+    "src/codetrace/models.py": "6b625bbcab85f2047ab3ed88273cb5a97cd2ccf701321cefbf759593f8e5eb9e",
+    "src/codetrace/records.py": "6a257ba35304844134a3f200ec467eb1ab6d6d1ffc4aa01a7008b0889236465c",
+    "src/codetrace/repository.py": "48732cd204eeed65ff808ea7f3f131e5af0385ac6ed28f4fe06d495ee8b6d875"
+  },
+  "live_example": "docs/live-smoke-example.json",
+  "old_tasks": {
+    "6.3": "new 9.1: finish 4 real smoke cases",
+    "6.4": "new 9.2: real 10 cases and human review"
+  },
+  "checks": [
+    {
+      "name": "pytest",
+      "exit_code": 0
+    },
+    {
+      "name": "pip-check",
+      "exit_code": 0
+    },
+    {
+      "name": "entry",
+      "exit_code": 0
+    },
+    {
+      "name": "cross-file",
+      "exit_code": 0
+    },
+    {
+      "name": "config",
+      "exit_code": 0
+    },
+    {
+      "name": "no-answer",
+      "exit_code": 0
+    }
+  ]
+}
