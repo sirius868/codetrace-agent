@@ -31,7 +31,10 @@ jobs:
       - run: python -m codetrace --repo examples/demo_repo --offline --scenario cross-file --trace-dir runs
       - run: python -m codetrace --repo examples/demo_repo --offline --scenario config
       - run: python -m codetrace --repo examples/demo_repo --offline --scenario no-answer
+      - run: python -m codetrace --repo examples/demo_repo --offline --retrieval indexed --scenario navigation --report runs/navigation.md
+      - run: python -m codetrace --repo examples/demo_repo --offline --retrieval indexed --scenario ranking --report runs/ranking.md
       - run: python -m codetrace.evaluation
+      - run: python -m codetrace.paired_evaluation --output runs/paired/report.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -1,0 +1,88 @@
+{
+  "report_id": "e840b4b513ac4eedb8b92ffeaa87a914",
+  "dataset_sha256": "d8d814a583c28439bdb9cb0c167fcfdee2e17d8f11eb354ad817452aff371a81",
+  "review_source": "assistant_draft",
+  "reviewer": "assistant",
+  "reviews": [
+    {
+      "id": "python-entry",
+      "run_id": "776cd4d57a61488ba06187ef292f5676",
+      "semantic_correct": true,
+      "omitted_facts": [],
+      "reasonable_refusal": null,
+      "notes": "需要人工逐项确认。"
+    },
+    {
+      "id": "python-cross-file",
+      "run_id": "0631a24c9db64e8a96fa707047364d0e",
+      "semantic_correct": true,
+      "omitted_facts": [],
+      "reasonable_refusal": null,
+      "notes": "需要人工逐项确认。"
+    },
+    {
+      "id": "python-config",
+      "run_id": "c0451b5be43a4e079da6461226ea716d",
+      "semantic_correct": true,
+      "omitted_facts": [],
+      "reasonable_refusal": null,
+      "notes": "需要人工逐项确认。"
+    },
+    {
+      "id": "python-exception",
+      "run_id": "aea18905245d4a2eaa2335d11260c1a6",
+      "semantic_correct": false,
+      "omitted_facts": [],
+      "reasonable_refusal": null,
+      "notes": "回答把CodeTrace写为10个字符，实际为9；引用合法仍存在语义错误。"
+    },
+    {
+      "id": "python-no-answer",
+      "run_id": "bd16bb7f3c9148f19a2fa384893f863a",
+      "semantic_correct": true,
+      "omitted_facts": [],
+      "reasonable_refusal": true,
+      "notes": "需要人工逐项确认。"
+    },
+    {
+      "id": "java-entry",
+      "run_id": "0726b86601d24781ac9b9c789409149c",
+      "semantic_correct": true,
+      "omitted_facts": [],
+      "reasonable_refusal": null,
+      "notes": "需要人工逐项确认。"
+    },
+    {
+      "id": "java-cross-file",
+      "run_id": "49351c67c2224813b1ab87daae41f2f3",
+      "semantic_correct": true,
+      "omitted_facts": [],
+      "reasonable_refusal": null,
+      "notes": "需要人工逐项确认。"
+    },
+    {
+      "id": "java-config",
+      "run_id": "4aa084e580684104b023f6b47a0dbdda",
+      "semantic_correct": true,
+      "omitted_facts": [],
+      "reasonable_refusal": null,
+      "notes": "需要人工逐项确认。"
+    },
+    {
+      "id": "java-exception",
+      "run_id": "b01cd695f3814e709c187980b06d1ed5",
+      "semantic_correct": true,
+      "omitted_facts": [],
+      "reasonable_refusal": null,
+      "notes": "需要人工逐项确认。"
+    },
+    {
+      "id": "java-no-answer",
+      "run_id": "ed0bbe671235479a9b579388a8f3e228",
+      "semantic_correct": true,
+      "omitted_facts": [],
+      "reasonable_refusal": true,
+      "notes": "需要人工逐项确认。"
+    }
+  ]
+}

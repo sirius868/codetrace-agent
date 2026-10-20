@@ -1,5 +1,8 @@
 # 验收记录
 
+以下为旧MVP历史记录，保留原始结果。2026-10-20分析扩展的最新测试/真实评测状态见
+[分析阶段验收](analysis-readiness.md) 和 verification/analysis-upgrade/，不要把下文旧的待执行状态当作最新状态。
+
 日期：2026-10-20。平台：Windows；Python 3.12.10；LangGraph 1.2.16。
 
 本次 OpenSpec 变更：deliver-codetrace-analysis-mvp。离线可交付项已实施，真实模型验收保持待完成。

@@ -1,0 +1,49 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "environment": ".venv-verify",
+  "checks": [
+    {
+      "check": "pytest",
+      "exit_code": 0
+    },
+    {
+      "check": "pip-check",
+      "exit_code": 0
+    },
+    {
+      "check": "entry",
+      "exit_code": 0
+    },
+    {
+      "check": "cross-file",
+      "exit_code": 0
+    },
+    {
+      "check": "config",
+      "exit_code": 0
+    },
+    {
+      "check": "no-answer",
+      "exit_code": 0
+    },
+    {
+      "check": "navigation",
+      "exit_code": 0
+    },
+    {
+      "check": "ranking",
+      "exit_code": 0
+    },
+    {
+      "check": "v1-evaluation",
+      "exit_code": 0
+    },
+    {
+      "check": "v2-missing",
+      "exit_code": 0
+    }
+  ],
+  "linux": "not_run",
+  "remote_ci": "not_run"
+}
