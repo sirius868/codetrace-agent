@@ -14,6 +14,7 @@ dev = ["pytest>=8.3,<9", "pytest-asyncio>=0.25,<1"]
 
 [project.scripts]
 codetrace = "codetrace.cli:main"
+codetrace-eval = "codetrace.evaluation:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

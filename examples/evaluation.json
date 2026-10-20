@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "python-entry",
+      "repo": "eval_python",
+      "language": "python",
+      "manifest_sha256": "74dd5034d8f46f20c4a0047e0b74ade0f356341a267267938220823c6def84f1",
+      "category": "entry",
+      "question": "程序从哪里启动？引用入口代码。",
+      "expected_files": [
+        "app.py"
+      ],
+      "expected_facts": [
+        "入口为 main；调用 greet 并输出返回文本。"
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [
+        "静态源码无法证明部署环境或动态运行结果。"
+      ],
+      "snippets": [
+        {
+          "path": "app.py",
+          "start": 1,
+          "end": 12,
+          "text": "from service import greet\n\n\ndef main():\n    try:\n        return greet(\"CodeTrace\")\n    except ValueError:\n        return \"Invalid name\"\n\n\nif __name__ == \"__main__\":\n    print(main())"
+        }
+      ]
+    },
+    {
+      "id": "python-cross-file",
+      "repo": "eval_python",
+      "language": "python",
+      "manifest_sha256": "74dd5034d8f46f20c4a0047e0b74ade0f356341a267267938220823c6def84f1",
+      "category": "cross-file",
+      "question": "从入口到问候文本输出经过哪些文件和函数？",
+      "expected_files": [
+        "app.py",
+        "service.py"
+      ],
+      "expected_facts": [
+        "main 调用服务的 greet，传入 CodeTrace。",
+        "greet 校验名称后拼接 Hello 问候语。"
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [
+        "静态源码无法证明部署环境或动态运行结果。"
+      ],
+      "snippets": [
+        {
+          "path": "app.py",
+          "start": 1,
+          "end": 12,
+          "text": "from service import greet\n\n\ndef main():\n    try:\n        return greet(\"CodeTrace\")\n    except ValueError:\n        return \"Invalid name\"\n\n\nif __name__ == \"__main__\":\n    print(main())"
+        },
+        {
+          "path": "service.py",
+          "start": 1,
+          "end": 7,
+          "text": "from config import MAX_NAME_LENGTH\n\n\ndef greet(name: str) -> str:\n    if not name or len(name) > MAX_NAME_LENGTH:\n        raise ValueError(\"Invalid name\")\n    return f\"Hello, {name}!\""
+        }
+      ]
+    },
+    {
+      "id": "python-config",
+      "repo": "eval_python",
+      "language": "python",
+      "manifest_sha256": "74dd5034d8f46f20c4a0047e0b74ade0f356341a267267938220823c6def84f1",
+      "category": "config",
+      "question": "名称长度上限在哪里定义并在哪里使用？",
+      "expected_files": [
+        "config.py",
+        "service.py"
+      ],
+      "expected_facts": [
+        "MAX_NAME_LENGTH 在配置文件中为40。",
+        "greet 使用该常量拒绝过长名称。"
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [
+        "静态源码无法证明部署环境或动态运行结果。"
+      ],
+      "snippets": [
+        {
+          "path": "config.py",
+          "start": 1,
+          "end": 1,
+          "text": "MAX_NAME_LENGTH = 40"
+        },
+        {
+          "path": "service.py",
+          "start": 1,
+          "end": 7,
+          "text": "from config import MAX_NAME_LENGTH\n\n\ndef greet(name: str) -> str:\n    if not name or len(name) > MAX_NAME_LENGTH:\n        raise ValueError(\"Invalid name\")\n    return f\"Hello, {name}!\""
+        }
+      ]
+    },
+    {
+      "id": "python-exception",
+      "repo": "eval_python",
+      "language": "python",
+      "manifest_sha256": "74dd5034d8f46f20c4a0047e0b74ade0f356341a267267938220823c6def84f1",
+      "category": "exception",
+      "question": "非法名称如何触发异常，入口如何处理？",
+      "expected_files": [
+        "service.py",
+        "app.py"
+      ],
+      "expected_facts": [
+        "空名称或长度大于40抛出 ValueError，main 捕获后返回 Invalid name。"
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [
+        "静态源码无法证明部署环境或动态运行结果。"
+      ],
+      "snippets": [
+        {
+          "path": "service.py",
+          "start": 1,
+          "end": 7,
+          "text": "from config import MAX_NAME_LENGTH\n\n\ndef greet(name: str) -> str:\n    if not name or len(name) > MAX_NAME_LENGTH:\n        raise ValueError(\"Invalid name\")\n    return f\"Hello, {name}!\""
+        },
+        {
+          "path": "app.py",
+          "start": 1,
+          "end": 12,
+          "text": "from service import greet\n\n\ndef main():\n    try:\n        return greet(\"CodeTrace\")\n    except ValueError:\n        return \"Invalid name\"\n\n\nif __name__ == \"__main__\":\n    print(main())"
+        }
+      ]
+    },
+    {
+      "id": "python-no-answer",
+      "repo": "eval_python",
+      "language": "python",
+      "manifest_sha256": "74dd5034d8f46f20c4a0047e0b74ade0f356341a267267938220823c6def84f1",
+      "category": "no-answer",
+      "question": "missing_feature_123 的数据库重试策略是什么？",
+      "expected_files": [],
+      "expected_facts": [],
+      "answerable": false,
+      "acceptable_uncertainties": [
+        "只检查当前夹具可访问文件；未发现数据库重试证据，不能推断外部服务或未读取代码。"
+      ],
+      "snippets": []
+    },
+    {
+      "id": "java-entry",
+      "repo": "eval_java",
+      "language": "java",
+      "manifest_sha256": "1a19c072500d9e55937b89122e8bf3651bc1cba5dc1a49b997982586edc55e36",
+      "category": "entry",
+      "question": "程序从哪里启动？引用入口代码。",
+      "expected_files": [
+        "App.java"
+      ],
+      "expected_facts": [
+        "入口为 main；调用 greet 并输出返回文本。"
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [
+        "静态源码无法证明部署环境或动态运行结果。"
+      ],
+      "snippets": [
+        {
+          "path": "App.java",
+          "start": 1,
+          "end": 9,
+          "text": "public class App {\n    public static void main(String[] args) {\n        try {\n            System.out.println(new GreetingService().greet(\"CodeTrace\"));\n        } catch (IllegalArgumentException e) {\n            System.out.println(\"Invalid name\");\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "java-cross-file",
+      "repo": "eval_java",
+      "language": "java",
+      "manifest_sha256": "1a19c072500d9e55937b89122e8bf3651bc1cba5dc1a49b997982586edc55e36",
+      "category": "cross-file",
+      "question": "从入口到问候文本输出经过哪些文件和函数？",
+      "expected_files": [
+        "App.java",
+        "GreetingService.java"
+      ],
+      "expected_facts": [
+        "main 调用服务的 greet，传入 CodeTrace。",
+        "greet 校验名称后拼接 Hello 问候语。"
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [
+        "静态源码无法证明部署环境或动态运行结果。"
+      ],
+      "snippets": [
+        {
+          "path": "App.java",
+          "start": 1,
+          "end": 9,
+          "text": "public class App {\n    public static void main(String[] args) {\n        try {\n            System.out.println(new GreetingService().greet(\"CodeTrace\"));\n        } catch (IllegalArgumentException e) {\n            System.out.println(\"Invalid name\");\n        }\n    }\n}"
+        },
+        {
+          "path": "GreetingService.java",
+          "start": 1,
+          "end": 8,
+          "text": "public class GreetingService {\n    public String greet(String name) {\n        if (name == null || name.isEmpty() || name.length() > Config.MAX_NAME_LENGTH) {\n            throw new IllegalArgumentException(\"Invalid name\");\n        }\n        return \"Hello, \" + name + \"!\";\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "java-config",
+      "repo": "eval_java",
+      "language": "java",
+      "manifest_sha256": "1a19c072500d9e55937b89122e8bf3651bc1cba5dc1a49b997982586edc55e36",
+      "category": "config",
+      "question": "名称长度上限在哪里定义并在哪里使用？",
+      "expected_files": [
+        "Config.java",
+        "GreetingService.java"
+      ],
+      "expected_facts": [
+        "MAX_NAME_LENGTH 在配置文件中为40。",
+        "greet 使用该常量拒绝过长名称。"
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [
+        "静态源码无法证明部署环境或动态运行结果。"
+      ],
+      "snippets": [
+        {
+          "path": "Config.java",
+          "start": 1,
+          "end": 3,
+          "text": "public class Config {\n    public static final int MAX_NAME_LENGTH = 40;\n}"
+        },
+        {
+          "path": "GreetingService.java",
+          "start": 1,
+          "end": 8,
+          "text": "public class GreetingService {\n    public String greet(String name) {\n        if (name == null || name.isEmpty() || name.length() > Config.MAX_NAME_LENGTH) {\n            throw new IllegalArgumentException(\"Invalid name\");\n        }\n        return \"Hello, \" + name + \"!\";\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "java-exception",
+      "repo": "eval_java",
+      "language": "java",
+      "manifest_sha256": "1a19c072500d9e55937b89122e8bf3651bc1cba5dc1a49b997982586edc55e36",
+      "category": "exception",
+      "question": "非法名称如何触发异常，入口如何处理？",
+      "expected_files": [
+        "GreetingService.java",
+        "App.java"
+      ],
+      "expected_facts": [
+        "null、空名称或长度大于40抛出 IllegalArgumentException，main 捕获后打印 Invalid name。"
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [
+        "静态源码无法证明部署环境或动态运行结果。"
+      ],
+      "snippets": [
+        {
+          "path": "GreetingService.java",
+          "start": 1,
+          "end": 8,
+          "text": "public class GreetingService {\n    public String greet(String name) {\n        if (name == null || name.isEmpty() || name.length() > Config.MAX_NAME_LENGTH) {\n            throw new IllegalArgumentException(\"Invalid name\");\n        }\n        return \"Hello, \" + name + \"!\";\n    }\n}"
+        },
+        {
+          "path": "App.java",
+          "start": 1,
+          "end": 9,
+          "text": "public class App {\n    public static void main(String[] args) {\n        try {\n            System.out.println(new GreetingService().greet(\"CodeTrace\"));\n        } catch (IllegalArgumentException e) {\n            System.out.println(\"Invalid name\");\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "java-no-answer",
+      "repo": "eval_java",
+      "language": "java",
+      "manifest_sha256": "1a19c072500d9e55937b89122e8bf3651bc1cba5dc1a49b997982586edc55e36",
+      "category": "no-answer",
+      "question": "missing_feature_123 的数据库重试策略是什么？",
+      "expected_files": [],
+      "expected_facts": [],
+      "answerable": false,
+      "acceptable_uncertainties": [
+        "只检查当前夹具可访问文件；未发现数据库重试证据，不能推断外部服务或未读取代码。"
+      ],
+      "snippets": []
+    }
+  ]
+}

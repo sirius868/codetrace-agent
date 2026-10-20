@@ -63,6 +63,14 @@ completed 表示结构与证据范围通过，不代表人工语义评分通过�
 
 `--trace-dir runs` 显式保存 schema_version=1 的JSON，包含消息、源码证据、工具参数、耗时及停止原因。默认不保存；records 不含配置密钥或供应商异常正文。记录包含源码，请自行控制分享范围。runs 已被Git忽略。新协议不再把无引用自由文本判定为 completed。
 
+## 评测与面试准备
+
+```powershell
+.\.venv\Scripts\python.exe -X utf8 -m codetrace.evaluation
+```
+
+默认运行 Python/Java 共10题固定离线回归，覆盖入口、跨文件、配置、异常和无答案。仓库哈希及源码标注不符会拒绝评测。报告将文件覆盖、引用校验与人工语义评分分开；真实模型需要显式 `--live`，当前尚未验收。操作和评分格式见 [评测说明](docs/EVALUATION.md)，讲解线索见 [面试准备](docs/INTERVIEW.md)。
+
 ## 源码阅读与限制
 
 1. `src/codetrace/graph.py`：状态、节点与条件路由。
