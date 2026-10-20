@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 
 import yaml
@@ -8,6 +9,19 @@ from codetrace.contracts import Result
 from codetrace.evidence import validate_answer
 
 ROOT = Path(__file__).parents[1]
+
+
+def test_handoff_evidence_links_and_model_match_delivery_records():
+    document = ROOT / "docs/HANDOFF.md"
+    content = document.read_text(encoding="utf-8")
+    links = re.findall(r"\[[^\]]+\]\(([^)]+)\)", content)
+    assert links
+    for target in links:
+        if not target.startswith(("https://", "http://")):
+            assert (document.parent / target.split("#", 1)[0]).is_file(), target
+    switch = json.loads((ROOT / "docs/verification/qwen-max-model-switch.json").read_text(encoding="utf-8"))
+    assert f"CODETRACE_MODEL={switch['returned_model']}" in content
+    assert switch["status"] == "ok"
 
 
 def test_live_smoke_record_contract_and_evidence():
