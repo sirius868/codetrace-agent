@@ -1,5 +1,5 @@
 # Tested dependency snapshot: Windows, Python 3.12.10, 2026-10-20
-# Install this file first, then: python -m pip install --no-deps -e .
+# Install this file first, then: python -m pip install --no-deps --no-build-isolation -e .
 # Pydantic is an explicit application dependency for schema_version=1 contracts.
 annotated-types==0.8.0
 anyio==4.15.1
@@ -39,6 +39,7 @@ PyYAML==6.0.3
 requests==2.34.2
 requests-toolbelt==1.0.0
 sniffio==1.3.1
+setuptools==80.9.0
 tenacity==9.2.1
 tqdm==4.70.1
 truststore==0.10.5
