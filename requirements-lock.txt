@@ -1,5 +1,6 @@
 # Tested dependency snapshot: Windows, Python 3.12.10, 2026-10-20
 # Install this file first, then: python -m pip install --no-deps -e .
+# Pydantic is an explicit application dependency for schema_version=1 contracts.
 annotated-types==0.8.0
 anyio==4.15.1
 certifi==2026.10.19

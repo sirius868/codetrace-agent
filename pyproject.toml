@@ -7,7 +7,7 @@ name = "codetrace-agent"
 version = "0.1.0"
 description = "A read-only repository assistant built with LangGraph"
 requires-python = ">=3.12,<3.14"
-dependencies = ["langgraph==1.2.16", "openai>=1.66.3,<2", "python-dotenv>=1,<2"]
+dependencies = ["langgraph==1.2.16", "openai>=1.66.3,<2", "python-dotenv>=1,<2", "pydantic>=2.10,<3"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.3,<9", "pytest-asyncio>=0.25,<1"]

@@ -1,0 +1,5 @@
+{
+  "valid": {"findings": [{"text": "入口位于 app.py。", "citations": [{"evidence_id": "run:1", "path": "app.py", "start": 1, "end": 2}]}], "uncertainties": [], "evidence_status": "sufficient"},
+  "insufficient": {"findings": [], "uncertainties": ["已搜索入口，尚未找到可确认的实现。"], "evidence_status": "insufficient"},
+  "invalid": {"findings": [{"text": "凭空断言入口存在。", "citations": []}], "uncertainties": [], "evidence_status": "sufficient"}
+}

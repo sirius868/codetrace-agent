@@ -6,7 +6,7 @@ from typing import Protocol
 
 
 class Model(Protocol):
-    async def respond(self, messages: list[dict], tools: list[dict]) -> dict: ...
+    async def respond(self, messages: list[dict], tools: list[dict], *, allow_tools: bool = True) -> dict: ...
 
 
 class OpenAICompatibleModel:
@@ -20,13 +20,17 @@ class OpenAICompatibleModel:
             raise ValueError("Set CODETRACE_API_KEY, CODETRACE_MODEL and CODETRACE_BASE_URL in .env")
         self.client = AsyncOpenAI(api_key=key, base_url=url, timeout=45, max_retries=1)
 
-    async def respond(self, messages, tools):
+    async def respond(self, messages, tools, *, allow_tools=True):
         response = await self.client.chat.completions.create(
-            model=self.model, messages=messages, tools=tools, tool_choice="auto", max_tokens=2048,
+            model=self.model, messages=messages, tools=tools, tool_choice="auto" if allow_tools else "none", max_tokens=2048,
         )
         if not response.choices:
             raise ValueError("Model returned no choices")
         message = response.choices[0].message
+        if message.role != "assistant" or (message.content is not None and not isinstance(message.content, str)):
+            raise ValueError("Invalid assistant response")
+        if not allow_tools and message.tool_calls:
+            raise ValueError("Repair must not request tools")
         return {"message": {"role": "assistant", "content": message.content or "",
                             **({"tool_calls": [c.model_dump() for c in message.tool_calls]} if message.tool_calls else {})},
                 "usage": response.usage.model_dump() if response.usage else {}}

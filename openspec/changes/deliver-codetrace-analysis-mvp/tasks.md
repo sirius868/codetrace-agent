@@ -4,9 +4,9 @@
 
 ## 1. 结果契约与模型协议
 
-- [ ] 1.1 新增严格的 finding/citation/evidence/result 契约，显式声明 Pydantic 依赖并更新快照；验证未知字段、非法范围、空事实、证据不足结构及 pip check。
-- [ ] 1.2 扩展模型适配器支持普通工具决策与禁用工具的修正请求；用 HTTP mock 验证成功、畸形响应、空 choices、401/429、超时和客户端关闭，无真实 API 调用。
-- [ ] 1.3 记录 schema_version=1 和旧 completed 行为变化至架构文档，提供合法/非法结果示例；用契约测试加载文档对应示例验证。
+- [x] 1.1 新增严格的 finding/citation/evidence/result 契约，显式声明 Pydantic 依赖并更新快照；验证未知字段、非法范围、空事实、证据不足结构及 pip check。
+- [x] 1.2 扩展模型适配器支持普通工具决策与禁用工具的修正请求；用 HTTP mock 验证成功、畸形响应、空 choices、401/429、超时和客户端关闭，无真实 API 调用。
+- [x] 1.3 记录 schema_version=1 和旧 completed 行为变化至架构文档，提供合法/非法结果示例；用契约测试加载文档对应示例验证。
 
 ## 2. 仓库概览与工具完善
 
