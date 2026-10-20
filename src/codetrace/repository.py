@@ -7,11 +7,13 @@ do not analyse a directory that another process is maliciously changing.
 import hashlib
 import os
 import stat
+from collections import Counter
 from pathlib import Path
 
 
 EXCLUDED = {".git", ".venv", "venv", "node_modules", "__pycache__", "dist", "build", "runs", ".aws", ".ssh"}
-SUFFIXES = {".py", ".java", ".js", ".ts", ".tsx", ".jsx", ".go", ".rs", ".c", ".h", ".cpp", ".cs", ".md", ".txt", ".toml", ".yaml", ".yml", ".json", ".xml", ".sql", ".properties", ".html", ".css", ".sh"}
+SUFFIXES = {".py", ".java", ".js", ".ts", ".tsx", ".jsx", ".go", ".rs", ".c", ".h", ".cpp", ".cs", ".md", ".txt", ".toml", ".yaml", ".yml", ".json", ".xml", ".sql", ".properties", ".html", ".css", ".sh", ".gradle", ".kts"}
+BUILD_FILES = {"pom.xml", "build.gradle", "build.gradle.kts", "pyproject.toml", "package.json", "Cargo.toml", "go.mod", "Dockerfile"}
 
 
 class RepositoryError(ValueError):
@@ -73,63 +75,130 @@ class Repository:
             raise RepositoryError("unsupported_encoding") from None
         return text, hashlib.sha256(raw).hexdigest()
 
-    def list_files(self, path=".", limit=100):
-        self._integer(limit, 1, 500)
+    def _walk(self, path=".", limit=500, suffixes=None):
+        if suffixes is not None and (not isinstance(suffixes, list) or len(suffixes) > 20
+                                    or any(not isinstance(s, str) or s not in SUFFIXES for s in suffixes)):
+            raise RepositoryError("invalid_suffixes")
         base = self._path(path)
-        if not base.is_dir():
-            raise RepositoryError("not_a_directory")
+        skipped = Counter()
+        reasons = []
         found, pending, visited = [], [base], 0
-        # Bound directory entries as well as returned files, including excluded entries.
+
+        def accept(candidate):
+            return ((candidate.suffix.lower() in SUFFIXES or candidate.name in BUILD_FILES)
+                    and (suffixes is None or candidate.suffix.lower() in suffixes))
+
+        if base.is_file():
+            return {"files": [base.relative_to(self.root).as_posix()] if accept(base) else [],
+                    "truncated": False, "truncation_reasons": [], "scanned_entries": 1,
+                    "skipped_entries": 0 if accept(base) else 1, "skip_reasons": {} if accept(base) else {"suffix": 1}}
         while pending:
             directory = pending.pop()
-            self._path(directory.relative_to(self.root).as_posix())
-            with os.scandir(directory) as entries:
-                for entry in entries:
-                    visited += 1
-                    if visited > self.max_entries:
-                        return {"files": sorted(found), "truncated": True}
-                    rel = Path(entry.path).relative_to(self.root).as_posix()
+            try:
+                self._path(directory.relative_to(self.root).as_posix())
+                batch = []
+                with os.scandir(directory) as entries:
+                    for entry in entries:
+                        if visited >= self.max_entries:
+                            reasons.append("entry_budget")
+                            break
+                        visited += 1
+                        batch.append(entry.name)
+                subdirs = []
+                for name in sorted(batch):
+                    rel = (directory / name).relative_to(self.root).as_posix()
                     try:
                         candidate = self._path(rel)
                         if candidate.is_dir():
-                            pending.append(candidate)
-                        elif candidate.is_file() and (candidate.suffix.lower() in SUFFIXES or candidate.name == "Dockerfile"):
+                            subdirs.append(candidate)
+                        elif candidate.is_file() and accept(candidate):
                             if len(found) >= min(limit, self.max_files):
-                                return {"files": sorted(found), "truncated": True}
+                                reasons.append("file_budget")
+                                break
                             found.append(rel)
-                    except (RepositoryError, OSError):
-                        continue
-        return {"files": sorted(found), "truncated": False}
+                        else:
+                            skipped["suffix_or_type"] += 1
+                    except RepositoryError as exc:
+                        skipped[exc.code] += 1
+                    except OSError:
+                        skipped["file_access_error"] += 1
+                pending.extend(reversed(subdirs))
+            except RepositoryError as exc:
+                skipped[exc.code] += 1
+            except OSError:
+                skipped["file_access_error"] += 1
+            if reasons:
+                break
+        return {"files": sorted(found), "truncated": bool(reasons), "truncation_reasons": sorted(set(reasons)),
+                "scanned_entries": visited, "skipped_entries": sum(skipped.values()), "skip_reasons": dict(skipped)}
+
+    def list_files(self, path=".", limit=100, suffixes=None):
+        self._integer(limit, 1, 500)
+        if not self._path(path).is_dir():
+            raise RepositoryError("not_a_directory")
+        return self._walk(path, limit, suffixes)
+
+    def repository_overview(self, path="."):
+        listing = self.list_files(path, limit=500)
+        files = listing.pop("files")
+        return {**listing, "file_count": len(files),
+                "counts_scope": "partial" if listing["truncated"] or listing["skip_reasons"].get("file_access_error") else "accessible_files",
+                "by_suffix": dict(sorted(Counter(Path(f).suffix.lower() or "[none]" for f in files).items())),
+                "directories": sorted({str(Path(f).parent).replace('\\', '/') for f in files}),
+                "candidate_paths": [f for f in files if Path(f).name.lower().startswith("readme") or Path(f).name in BUILD_FILES]}
+
+    def fingerprint(self):
+        """Bounded content fingerprint for repeat detection, not a persistent index."""
+        listing = self._walk(limit=self.max_files)
+        digest = hashlib.sha256(json_bytes(listing))
+        for path in listing["files"]:
+            try:
+                _, sha = self._text(path)
+                digest.update(json_bytes([path, sha]))
+            except (RepositoryError, OSError) as exc:
+                digest.update(json_bytes([path, type(exc).__name__]))
+        return digest.hexdigest()
 
     @staticmethod
     def _integer(value, low, high):
         if type(value) is not int or not low <= value <= high:
             raise RepositoryError("invalid_range")
 
-    def search_code(self, query, path=".", limit=30):
+    def search_code(self, query, path=".", limit=30, suffixes=None, context=0):
         if not isinstance(query, str) or not query.strip() or len(query) > 200:
             raise RepositoryError("invalid_query")
         self._integer(limit, 1, 100)
-        listing = self.list_files(path, limit=min(self.max_files, 500))
-        hits, skipped = [], 0
+        self._integer(context, 0, 3)
+        listing = self._walk(path, limit=min(self.max_files, 500), suffixes=suffixes)
+        hits, skipped = [], Counter(listing["skip_reasons"])
         for filename in listing["files"]:
             try:
                 text, _ = self._text(filename)
-            except (RepositoryError, OSError):
-                skipped += 1
+            except RepositoryError as exc:
+                skipped[exc.code] += 1
                 continue
-            for number, line in enumerate(text.splitlines(), 1):
+            except OSError:
+                skipped["file_access_error"] += 1
+                continue
+            lines = text.splitlines()
+            for number, line in enumerate(lines, 1):
                 if query in line:
                     if len(hits) >= limit:
-                        return {"matches": hits, "truncated": True, "skipped_files": skipped}
-                    hits.append({"path": filename, "line": number, "text": line[:500], "line_truncated": len(line) > 500})
-        return {"matches": hits, "truncated": listing["truncated"], "skipped_files": skipped}
+                        return {"matches": hits, "truncated": True, "truncation_reasons": listing["truncation_reasons"] + ["match_budget"], "skipped_files": sum(skipped.values()), "skip_reasons": dict(skipped)}
+                    hits.append({"path": filename, "line": number, "text": line[:500], "line_truncated": len(line) > 500,
+                                 "context": [{"line": n, "text": lines[n-1][:500], "line_truncated": len(lines[n-1]) > 500}
+                                             for n in range(max(1, number-context), min(len(lines), number+context)+1)]})
+        return {"matches": hits, "truncated": listing["truncated"], "truncation_reasons": listing["truncation_reasons"], "skipped_files": sum(skipped.values()), "skip_reasons": dict(skipped)}
 
-    def read_file(self, path, start=1, end=80):
+    def read_file(self, path, start=1, end=None):
         self._integer(start, 1, 10_000_000)
+        end = start + 79 if end is None else end
         self._integer(end, start, start + 119)
         text, digest = self._text(path)
         lines = text.splitlines()
+        if not lines and start == 1:
+            return {"path": self._path(path).relative_to(self.root).as_posix(), "start": None, "end": None,
+                    "lines": [], "sha256": digest, "truncated": False, "next_start": None, "eof": True}
         if start > len(lines):
             raise RepositoryError("line_out_of_range")
         actual_end = min(end, len(lines))
@@ -144,10 +213,12 @@ class Repository:
             raise RepositoryError("line_too_long")
         return {"path": self._path(path).relative_to(self.root).as_posix(), "start": start,
                 "end": output[-1]["line"], "lines": output, "sha256": digest,
-                "truncated": output[-1]["line"] < actual_end}
+                "truncated": output[-1]["line"] < actual_end,
+                "next_start": output[-1]["line"] + 1 if output[-1]["line"] < len(lines) else None,
+                "eof": output[-1]["line"] == len(lines)}
 
     def execute(self, name: str, arguments: dict) -> dict:
-        methods = {"list_files": self.list_files, "search_code": self.search_code, "read_file": self.read_file}
+        methods = {"list_files": self.list_files, "search_code": self.search_code, "read_file": self.read_file, "repository_overview": self.repository_overview}
         if name not in methods:
             return {"ok": False, "error": "unknown_tool"}
         if not isinstance(arguments, dict):
@@ -167,11 +238,17 @@ def tool_schema(name, description, properties, required):
             "parameters": {"type": "object", "properties": properties, "required": required, "additionalProperties": False}}}
 
 
+def json_bytes(value):
+    import json
+    return json.dumps(value, sort_keys=True, ensure_ascii=False).encode("utf-8")
+
+
 TOOLS = [
+    tool_schema("repository_overview", "Bounded file statistics and README/build-file candidates, not a call graph.", {"path": {"type": "string", "default": "."}}, []),
     tool_schema("list_files", "List source files under a relative directory; exclusions and limits apply.",
-                {"path": {"type": "string"}, "limit": {"type": "integer", "minimum": 1, "maximum": 500}}, []),
+                {"path": {"type": "string", "default": "."}, "limit": {"type": "integer", "minimum": 1, "maximum": 500, "default": 100}, "suffixes": {"type": "array", "items": {"type": "string"}}}, []),
     tool_schema("search_code", "Case-sensitive literal search in source files. Read matched files before citing them.",
-                {"query": {"type": "string"}, "path": {"type": "string"}, "limit": {"type": "integer", "minimum": 1, "maximum": 100}}, ["query"]),
+                {"query": {"type": "string"}, "path": {"type": "string", "default": "."}, "limit": {"type": "integer", "minimum": 1, "maximum": 100, "default": 30}, "suffixes": {"type": "array", "items": {"type": "string"}}, "context": {"type": "integer", "minimum": 0, "maximum": 3, "default": 0}}, ["query"]),
     tool_schema("read_file", "Read UTF-8 source lines. Use forward-slash relative paths; at most 120 lines per call.",
-                {"path": {"type": "string"}, "start": {"type": "integer", "minimum": 1}, "end": {"type": "integer", "minimum": 1}}, ["path"]),
+                {"path": {"type": "string"}, "start": {"type": "integer", "minimum": 1, "default": 1}, "end": {"type": "integer", "minimum": 1, "description": "Omit for start+79; at most start+119."}}, ["path"]),
 ]
