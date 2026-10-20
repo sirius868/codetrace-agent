@@ -1,0 +1,24 @@
+{
+  "requested_model": "qwen3.8-max",
+  "checked_at": "2026-10-20T13:24:59.340611+00:00",
+  "purpose": "model switch connectivity check",
+  "status": "ok",
+  "returned_model": "qwen3.8-max",
+  "usage": {
+    "completion_tokens": 26,
+    "prompt_tokens": 63,
+    "total_tokens": 89,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 22,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 26
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0,
+      "text_tokens": 63
+    }
+  }
+}

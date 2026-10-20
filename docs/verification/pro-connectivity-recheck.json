@@ -1,0 +1,10 @@
+{
+  "model": "deepseek-v4-pro-0813",
+  "checked_at": "2026-10-20T13:21:36.735569+00:00",
+  "purpose": "minimal connectivity diagnostic after four consecutive permission failures",
+  "status": "failed",
+  "error_type": "PermissionDeniedError",
+  "http_status": 403,
+  "provider_code": "AllocationQuota.FreeTierOnly",
+  "provider_type": "AllocationQuota.FreeTierOnly"
+}

@@ -67,7 +67,7 @@
 
 - [x] 10.1 在独立Python3.12环境按新快照安装，运行完整pytest、pip check、literal/indexed演示和报告导出，保存平台/跳过/失败记录并确认兼容旧结果与旧数据集。
 - [x] 10.2 更新Windows/Linux无密钥CI覆盖解析器、导航、排序及v2离线评测，验证工作流命令；只对实际运行的平台报告通过，未运行的远程CI明确标记。
-- [ ] 10.3 核对README、架构、工具、评测及面试材料与最终实现一致，记录贡献/限制/真实证据和analysis_ready_for_programming状态；OpenSpec严格校验、差异检查通过并提交集成记录。
+- [x] 10.3 核对README、架构、工具、评测及面试材料与最终实现一致，记录贡献/限制/真实证据和analysis_ready_for_programming状态；OpenSpec严格校验、差异检查通过并提交集成记录。
 
 ## Workflow follow-up
 
