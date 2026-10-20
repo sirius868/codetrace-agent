@@ -78,7 +78,7 @@ completed 表示结构与证据范围通过，不代表人工语义评分通过�
 3. `contracts.py` / `evidence.py`：严格契约、快照与引用校验。
 4. `models.py` / `cli.py` / `records.py`：模型、命令入口及记录。
 
-详细说明见 [架构](docs/ARCHITECTURE.md)、[工具](docs/TOOLS.md)、[结果协议](docs/RESULTS.md)。
+详细说明见 [架构](docs/ARCHITECTURE.md)、[工具](docs/TOOLS.md)、[结果协议](docs/RESULTS.md)、[验收记录](docs/VERIFICATION.md)。
 
 路径检查拒绝链接/reparse和常见凭证文件名，但不是OS安全沙盒，不能防御恶意进程同时更改仓库，也不能发现所有普通源码内密钥。总时限停止后不再调度请求，不保证硬取消正在阻塞的文件读取。重复检测采用有界内容指纹，面向小仓库；不宣称全程序调用关系分析。
 
