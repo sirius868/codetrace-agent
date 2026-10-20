@@ -23,3 +23,13 @@ def test_live_mvp_records_remain_unreviewed_and_valid():
     draft = json.loads((base / "ten-case-assistant-draft.json").read_text(encoding="utf-8"))
     assert draft["review_source"] == "assistant_draft"
     assert next(r for r in draft["reviews"] if r["id"] == "python-exception")["semantic_correct"] is False
+
+
+def test_model_switch_records_keep_partial_runs_separate():
+    directory = ROOT / "docs/verification"
+    switch = json.loads((directory / "model-switch.json").read_text(encoding="utf-8"))
+    previous = json.loads((directory / "qwen-interrupted.json").read_text(encoding="utf-8"))
+    assert switch["status"] == "ok" and switch["returned_model"] == "deepseek-v4.1-flash"
+    assert previous["model"] == "qwen3.8-27b"
+    assert previous["completed_combinations"] == len(previous["rows"]) == 15
+    assert previous["interrupted_attempt_usage"].startswith("unknown")

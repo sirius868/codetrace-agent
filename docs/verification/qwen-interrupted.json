@@ -1,0 +1,100 @@
+{
+  "report_id": "f2427801493940f894ecede2e72eaf28",
+  "model": "qwen3.8-27b",
+  "configuration_sha256": "967e4b9abb5ed976c497d91f243f69e40120a16a17008435902a378a8e1232fd",
+  "completed_combinations": 15,
+  "reason": "User requested switch to deepseek-v4.1-flash. Prior partial report remains at runs/paired/live.json; no results merged.",
+  "interrupted_attempt_usage": "unknown; in-flight task was stopped before its result could be persisted",
+  "rows": [
+    {
+      "case_id": "petclinic-entry",
+      "variant": "literal",
+      "status": "context_budget",
+      "run_id": "443b6659ad5f4836a37dd6b7f9d7eb2f"
+    },
+    {
+      "case_id": "petclinic-entry",
+      "variant": "indexed",
+      "status": "context_budget",
+      "run_id": "3892e56030b84170ad2b3c092fd34fd0"
+    },
+    {
+      "case_id": "petclinic-owner-search",
+      "variant": "literal",
+      "status": "completed",
+      "run_id": "533f80bb383e47dbb6baf39276455a31"
+    },
+    {
+      "case_id": "petclinic-owner-search",
+      "variant": "indexed",
+      "status": "completed",
+      "run_id": "6388e4efc37644ae87d9f1ff3e49c906"
+    },
+    {
+      "case_id": "petclinic-visit",
+      "variant": "literal",
+      "status": "model_error",
+      "run_id": "d29d3b88653c445a84ad301cf840a49d"
+    },
+    {
+      "case_id": "petclinic-visit",
+      "variant": "indexed",
+      "status": "max_rounds",
+      "run_id": "00bdd177f9e44a7f9c4ed6d4174b93a9"
+    },
+    {
+      "case_id": "petclinic-config",
+      "variant": "literal",
+      "status": "completed",
+      "run_id": "d36c1cf9a0bc4890af9302f58ecbcdf3"
+    },
+    {
+      "case_id": "petclinic-config",
+      "variant": "indexed",
+      "status": "model_error",
+      "run_id": "a2a6d300615d4b0fa260d7ae0a5fbdb0"
+    },
+    {
+      "case_id": "petclinic-owner-missing",
+      "variant": "literal",
+      "status": "completed",
+      "run_id": "7aecc0c91c954dbb8bdf38768cc34204"
+    },
+    {
+      "case_id": "petclinic-owner-missing",
+      "variant": "indexed",
+      "status": "model_error",
+      "run_id": "0116b70c6bdf4e8ebd5015e1de31c468"
+    },
+    {
+      "case_id": "petclinic-pet-validator",
+      "variant": "literal",
+      "status": "model_error",
+      "run_id": "2d82e0f1be7f4b1ea4b70e95eb801bf1"
+    },
+    {
+      "case_id": "petclinic-pet-validator",
+      "variant": "indexed",
+      "status": "model_error",
+      "run_id": "19c135adb4904cfe9ad759ebbd25a93b"
+    },
+    {
+      "case_id": "petclinic-runtime-db",
+      "variant": "literal",
+      "status": "max_tools",
+      "run_id": "fd9ffe26fc1b449ba4a20cdca54e849f"
+    },
+    {
+      "case_id": "petclinic-runtime-db",
+      "variant": "indexed",
+      "status": "max_tools",
+      "run_id": "f6da25738fb4423cb3911c57133c0526"
+    },
+    {
+      "case_id": "petclinic-runtime-overload",
+      "variant": "literal",
+      "status": "model_error",
+      "run_id": "c74d44e011d64f3496429b4f6e88029f"
+    }
+  ]
+}

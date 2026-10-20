@@ -17,8 +17,13 @@
 四场景均有真实结果，包含拒答状态及表述问题；十题已运行，人工审核0。
 8个completed、2个insufficient_evidence不是80%或100%语义成功率。
 
-v2完整计划为48个组合。分批原始进度位于本地 `runs/paired/live.json`；失败与未运行留在分母。
-初步已观察到Petclinic入口题两模式context_budget；不得删题或提高预算后混算。
+v2完整计划为48个组合。用户中途要求切换模型：Qwen的15个完整组合保留在本地
+`runs/paired/live.json`，中断时在途任务usage未知，不编造为零。已观察到Petclinic入口题
+两模式context_budget；不得删题或提高预算后混算。停止摘要见 verification/qwen-interrupted.json。
+
+通过原接口模型列表确认正确ID为`deepseek-v4.1-flash`，连通记录见verification/model-switch.json。
+最初按用户连写名称`deepseekv4.1flash`请求返回404，修正为接口实际ID后成功；未变更Key或Base URL。
+新的开发集报告位于`runs/paired/deepseek-live.json`；不会合并Qwen结果计算DeepSeek成绩。
 当前没有全量人工语义成绩，也没有“indexed优于literal”的结论。
 
 ## 人工验收标准
