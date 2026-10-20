@@ -23,7 +23,10 @@ v2完整计划为48个组合。用户中途要求切换模型：Qwen的15个完�
 
 通过原接口模型列表确认正确ID为`deepseek-v4.1-flash`，连通记录见verification/model-switch.json。
 最初按用户连写名称`deepseekv4.1flash`请求返回404，修正为接口实际ID后成功；未变更Key或Base URL。
-新的开发集报告位于`runs/paired/deepseek-live.json`；不会合并Qwen结果计算DeepSeek成绩。
+Flash开发集报告位于`runs/paired/deepseek-live.json`：32个开发组合已执行，最后10个组合为
+PermissionDeniedError，保留题未运行。摘要见verification/flash-development-summary.json。
+随后用户要求切换`deepseek-v4-pro-0813`，接口连通通过（verification/pro-model-switch.json）。
+当前Pro独立报告位于`runs/paired/pro-live.json`；三种模型结果互不混算。
 当前没有全量人工语义成绩，也没有“indexed优于literal”的结论。
 
 ## 人工验收标准

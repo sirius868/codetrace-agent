@@ -33,3 +33,12 @@ def test_model_switch_records_keep_partial_runs_separate():
     assert previous["model"] == "qwen3.8-27b"
     assert previous["completed_combinations"] == len(previous["rows"]) == 15
     assert previous["interrupted_attempt_usage"].startswith("unknown")
+
+
+def test_pro_switch_preserves_flash_permission_failures():
+    directory = ROOT / "docs/verification"
+    switch = json.loads((directory / "pro-model-switch.json").read_text(encoding="utf-8"))
+    previous = json.loads((directory / "flash-development-summary.json").read_text(encoding="utf-8"))
+    assert switch["status"] == "ok" and switch["returned_model"] == "deepseek-v4-pro-0813"
+    assert previous["completed_combinations"] == len(previous["rows"]) == 32
+    assert sum("PermissionDeniedError" in r["errors"] for r in previous["rows"]) == 10

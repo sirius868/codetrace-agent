@@ -1,0 +1,221 @@
+{
+  "model": "deepseek-v4.1-flash",
+  "report_id": "96b3c8f1e68e495e92035b66d6f0bdd6",
+  "configuration_sha256": "93a47876904177df7468ee9b9dc645cab4fd414e60a55b47b66b72778363fc44",
+  "completed_combinations": 32,
+  "reason": "User requested deepseek-v4-pro-0813 after development runs; held-out not run under Flash.",
+  "rows": [
+    {
+      "case_id": "petclinic-entry",
+      "variant": "literal",
+      "status": "context_budget",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-entry",
+      "variant": "indexed",
+      "status": "context_budget",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-owner-search",
+      "variant": "literal",
+      "status": "completed",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-owner-search",
+      "variant": "indexed",
+      "status": "completed",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-visit",
+      "variant": "literal",
+      "status": "max_rounds",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-visit",
+      "variant": "indexed",
+      "status": "max_rounds",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-config",
+      "variant": "literal",
+      "status": "completed",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-config",
+      "variant": "indexed",
+      "status": "max_rounds",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-owner-missing",
+      "variant": "literal",
+      "status": "max_rounds",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-owner-missing",
+      "variant": "indexed",
+      "status": "max_rounds",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-pet-validator",
+      "variant": "literal",
+      "status": "max_tools",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-pet-validator",
+      "variant": "indexed",
+      "status": "max_rounds",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-runtime-db",
+      "variant": "literal",
+      "status": "max_tools",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-runtime-db",
+      "variant": "indexed",
+      "status": "max_tools",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-runtime-overload",
+      "variant": "literal",
+      "status": "context_budget",
+      "errors": []
+    },
+    {
+      "case_id": "petclinic-runtime-overload",
+      "variant": "indexed",
+      "status": "max_rounds",
+      "errors": []
+    },
+    {
+      "case_id": "flask-entry",
+      "variant": "literal",
+      "status": "max_rounds",
+      "errors": []
+    },
+    {
+      "case_id": "flask-entry",
+      "variant": "indexed",
+      "status": "completed",
+      "errors": []
+    },
+    {
+      "case_id": "flask-session-open",
+      "variant": "literal",
+      "status": "max_rounds",
+      "errors": []
+    },
+    {
+      "case_id": "flask-session-open",
+      "variant": "indexed",
+      "status": "context_budget",
+      "errors": []
+    },
+    {
+      "case_id": "flask-test-session",
+      "variant": "literal",
+      "status": "max_tools",
+      "errors": []
+    },
+    {
+      "case_id": "flask-test-session",
+      "variant": "indexed",
+      "status": "max_rounds",
+      "errors": []
+    },
+    {
+      "case_id": "flask-propagate",
+      "variant": "literal",
+      "status": "model_error",
+      "errors": [
+        "PermissionDeniedError"
+      ]
+    },
+    {
+      "case_id": "flask-propagate",
+      "variant": "indexed",
+      "status": "model_error",
+      "errors": [
+        "PermissionDeniedError"
+      ]
+    },
+    {
+      "case_id": "flask-user-exception",
+      "variant": "literal",
+      "status": "model_error",
+      "errors": [
+        "PermissionDeniedError"
+      ]
+    },
+    {
+      "case_id": "flask-user-exception",
+      "variant": "indexed",
+      "status": "model_error",
+      "errors": [
+        "PermissionDeniedError"
+      ]
+    },
+    {
+      "case_id": "flask-invalid-cookie",
+      "variant": "literal",
+      "status": "model_error",
+      "errors": [
+        "PermissionDeniedError"
+      ]
+    },
+    {
+      "case_id": "flask-invalid-cookie",
+      "variant": "indexed",
+      "status": "model_error",
+      "errors": [
+        "PermissionDeniedError"
+      ]
+    },
+    {
+      "case_id": "flask-runtime-key",
+      "variant": "literal",
+      "status": "model_error",
+      "errors": [
+        "PermissionDeniedError"
+      ]
+    },
+    {
+      "case_id": "flask-runtime-key",
+      "variant": "indexed",
+      "status": "model_error",
+      "errors": [
+        "PermissionDeniedError"
+      ]
+    },
+    {
+      "case_id": "flask-runtime-session",
+      "variant": "literal",
+      "status": "model_error",
+      "errors": [
+        "PermissionDeniedError"
+      ]
+    },
+    {
+      "case_id": "flask-runtime-session",
+      "variant": "indexed",
+      "status": "model_error",
+      "errors": [
+        "PermissionDeniedError"
+      ]
+    }
+  ]
+}

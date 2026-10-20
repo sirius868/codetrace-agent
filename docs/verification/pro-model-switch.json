@@ -1,0 +1,21 @@
+{
+  "requested_model": "deepseek-v4-pro-0813",
+  "purpose": "model-switch connectivity check",
+  "status": "ok",
+  "returned_model": "deepseek-v4-pro-0813",
+  "usage": {
+    "completion_tokens": 16,
+    "prompt_tokens": 86,
+    "total_tokens": 102,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 16,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}
