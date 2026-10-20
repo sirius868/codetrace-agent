@@ -39,28 +39,49 @@ class OpenAICompatibleModel:
         await self.client.close()
 
 
-class DemoModel:
-    """A fixed repository exercise, not a reasoning model or general question-answerer."""
+def final_response(evidence, *, insufficient=False, explanation="已检查可访问范围，证据仍不足。"):
+    findings = [{"text": "离线演示读取了该源码片段（不是模型语义推理）。", "citations": [
+        {k: e[k] for k in ("evidence_id", "path", "start", "end")}
+    ]} for e in evidence if e.get("evidence_id")]
+    return {"message": {"role": "assistant", "content": json.dumps({
+        "findings": findings, "uncertainties": [explanation] if insufficient else [],
+        "evidence_status": "insufficient" if insufficient else "sufficient",
+    }, ensure_ascii=False)}}
 
-    async def respond(self, messages, tools):
+
+class DemoModel:
+    """Deterministic exercise; scenarios do not interpret arbitrary questions."""
+    def __init__(self, scenario="entry", *, steps=None, insufficient=False):
+        self.scenario = scenario
+        self.steps = steps
+        self.insufficient = insufficient
+
+    async def respond(self, messages, tools, *, allow_tools=True):
         observations = [json.loads(m["content"]) for m in messages if m["role"] == "tool"]
+        evidence = [o["data"] for o in observations if o["ok"] and o.get("data", {}).get("evidence_id")]
         count = len(observations)
+        if not allow_tools:
+            return final_response([], insufficient=True, explanation="模拟模型不能进行真实回答修正。")
         if count and not observations[-1]["ok"]:
-            return {"message": {"role": "assistant", "content": "离线演示工具失败，无法确认入口。"}}
-        if count == 0:
-            name, args = "list_files", {}
+            return final_response(evidence, insufficient=True, explanation="离线场景工具失败，无法确认预设结论。")
+        if self.steps is not None:
+            if count >= len(self.steps):
+                return final_response(evidence, insufficient=self.insufficient or not evidence)
+            name, args = self.steps[count]
+        elif count == 0:
+            name, args = "repository_overview", {}
         elif count == 1:
-            name, args = "search_code", {"query": "def main("}
+            name, args = "search_code", {"query": "TIMEOUT_SECONDS" if self.scenario == "config" else ("missing_feature_123" if self.scenario == "no-answer" else "def main(")}
         elif count == 2:
             hits = observations[-1]["data"]["matches"]
             if not hits:
-                return {"message": {"role": "assistant", "content": "未找到 def main(；离线演示仅识别这一固定入口。"}}
+                return final_response(evidence, insufficient=True, explanation="预设搜索未命中；不能据此证明功能不存在。")
             hit = hits[0]
-            name, args = "read_file", {"path": hit["path"], "start": hit["line"], "end": hit["line"] + 8}
+            name, args = "read_file", {"path": hit["path"], "start": hit["line"], "end": hit["line"]+8}
+        elif self.scenario == "cross-file" and count == 3:
+            name, args = "read_file", {"path": "service.py"}
         else:
-            evidence = observations[-1]["data"]
-            ref = f"[[{evidence['path']}:L{evidence['start']}-L{evidence['end']}]]"
-            return {"message": {"role": "assistant", "content": f"离线演示已定位 main 函数并读取源码：{ref}\n这是固定模拟响应，未使用真实模型推理。"}}
-        return {"message": {"role": "assistant", "content": "",
-                "tool_calls": [{"id": f"demo_{count}", "type": "function", "function": {
-                    "name": name, "arguments": json.dumps(args)}}]}}
+            return final_response(evidence, insufficient=not evidence)
+        return {"message": {"role": "assistant", "content": "", "tool_calls": [
+            {"id": f"demo_{count}", "type": "function", "function": {"name": name, "arguments": json.dumps(args)}}
+        ]}}

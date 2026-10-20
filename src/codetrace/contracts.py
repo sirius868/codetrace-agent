@@ -71,7 +71,7 @@ class Result(StrictModel):
     schema_version: Literal[1] = 1
     run_id: Text
     mode: Literal["offline", "live", "test"]
-    question: Text
+    question: Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=8000)]
     repository: PathText
     model: Text
     budgets: dict
