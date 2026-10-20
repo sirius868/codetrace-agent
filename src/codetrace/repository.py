@@ -59,12 +59,18 @@ class Repository:
             raise RepositoryError("path_outside_repository")
         return current
 
-    def _text(self, path: str) -> tuple[str, str]:
+    def _raw(self, path: str, limit: int) -> bytes:
         target = self._path(path)
         if not target.is_file():
             raise RepositoryError("not_a_file")
         with target.open("rb") as stream:
-            raw = stream.read(self.max_bytes + 1)
+            return stream.read(limit)
+
+    def _text(self, path: str) -> tuple[str, str]:
+        raw = self._raw(path, self.max_bytes + 1)
+        return self._decode(raw)
+
+    def _decode(self, raw: bytes) -> tuple[str, str]:
         if len(raw) > self.max_bytes:
             raise RepositoryError("file_too_large")
         if b"\0" in raw:
@@ -75,7 +81,7 @@ class Repository:
             raise RepositoryError("unsupported_encoding") from None
         return text, hashlib.sha256(raw).hexdigest()
 
-    def _walk(self, path=".", limit=500, suffixes=None):
+    def _walk(self, path=".", limit=500, suffixes=None, *, check=None, excluded=None):
         if suffixes is not None and (not isinstance(suffixes, list) or len(suffixes) > 20
                                     or any(not isinstance(s, str) or s not in SUFFIXES for s in suffixes)):
             raise RepositoryError("invalid_suffixes")
@@ -93,12 +99,16 @@ class Repository:
                     "truncated": False, "truncation_reasons": [], "scanned_entries": 1,
                     "skipped_entries": 0 if accept(base) else 1, "skip_reasons": {} if accept(base) else {"suffix": 1}}
         while pending:
+            if check:
+                check()
             directory = pending.pop()
             try:
                 self._path(directory.relative_to(self.root).as_posix())
                 batch = []
                 with os.scandir(directory) as entries:
                     for entry in entries:
+                        if check:
+                            check()
                         if visited >= self.max_entries:
                             reasons.append("entry_budget")
                             break
@@ -106,6 +116,11 @@ class Repository:
                         batch.append(entry.name)
                 subdirs = []
                 for name in sorted(batch):
+                    if check:
+                        check()
+                    if excluded and excluded(name):
+                        skipped["index_excluded"] += 1
+                        continue
                     rel = (directory / name).relative_to(self.root).as_posix()
                     try:
                         candidate = self._path(rel)
