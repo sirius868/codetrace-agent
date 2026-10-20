@@ -4,8 +4,22 @@ from pathlib import Path
 import yaml
 
 from codetrace.evaluation import DEFAULT_DATASET, load_dataset
+from codetrace.contracts import Result
+from codetrace.evidence import validate_answer
 
 ROOT = Path(__file__).parents[1]
+
+
+def test_live_smoke_record_contract_and_evidence():
+    record = json.loads((ROOT / "docs/live-smoke-example.json").read_text(encoding="utf-8"))
+    Result.model_validate(record)
+    assert record["mode"] == "live" and record["stop_reason"] == "completed"
+    assert record["model"] == "qwen3.8-27b"
+    answer = {k: record[k] for k in ("findings", "uncertainties", "evidence_status")}
+    _, errors = validate_answer(json.dumps(answer), record["evidence"])
+    assert not errors
+    assert {e["path"] for e in record["evidence"]} == {"app.py", "service.py", "config.py"}
+    assert sum(c["total_tokens"] for c in record["usage"]["calls"]) == 7247
 
 
 def test_ci_has_two_platforms_and_no_live_commands():

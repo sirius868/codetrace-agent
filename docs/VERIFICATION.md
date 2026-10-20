@@ -40,7 +40,11 @@ OpenSpec 严格校验通过。Windows/Linux Python 3.12 的 CI 已配置在 `.gi
 
 ## 待完成：真实模型验证
 
-用户尚无 API Key，因此 tasks 6.3、6.4 保持未完成。没有真实模型调用量、费用、语义成功率或性能提升结论。HTTP mock 测试仅验证适配层协议；离线报告 live_status=not_run。
+2026-10-20 已完成一次真实跨文件 smoke test：接口 `https://dashscope.aliyuncs.com/compatible-mode/v1`，请求模型 `qwen3.8-27b`，问题为“main 如何调用 greet 并输出结果？请读取相关文件并引用代码。”。首次沙箱内请求因 APIConnectionError 失败，获得网络权限后重试成功；不把首次失败算为模型回答错误。
+
+成功记录见 [live-smoke-example.json](live-smoke-example.json)：run_id=aeaa8fb8774c44d29536130dc41cf5cc，completed，4次模型尝试、5次工具调用、0次修正、18730.49ms。服务端 usage 汇总为6460个输入token、787个输出token、7247个总token；未查询价格，不能据此给出费用。已核对回答与 app.py/service.py/config.py 的入口、调用、校验和打印行为一致；这只是单例源码核对，未完成全量人工评分。
+
+tasks 6.3、6.4 仍未完成：前者还缺入口、配置、无答案专项 smoke，后者还缺真实10题评测和人工审核。没有整体语义成功率或性能提升结论。已提交的10题离线报告仍为 live_status=not_run，不与这条真实记录混算。密钥只存放本地 .env，已检查不在执行记录中。
 
 填写调用者工作目录 `.env` 后，使用下列真实 smoke 命令：
 
