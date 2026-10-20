@@ -1,0 +1,2476 @@
+{
+  "schema_version": 2,
+  "dataset_version": "2026-10-20.1",
+  "repositories": [
+    {
+      "id": "spring-petclinic",
+      "url": "https://github.com/spring-projects/spring-petclinic",
+      "revision": "500158f732419217507c7656904b8e6aa1bcc0d6",
+      "language": "java",
+      "split": "development",
+      "license": "Apache-2.0",
+      "license_path": "LICENSE.txt",
+      "license_sha256": "56dfc19e0dc836e30177332f73e8e6fbc297941acf3d906eec6eaaa46c2c452a",
+      "source_manifest": [
+        {
+          "path": ".devcontainer/Dockerfile",
+          "sha256": "c1fb8bd0b5aeb9885b28cae3ee340b790412322020d64e17bfd50241c8920a2d",
+          "lines": 11
+        },
+        {
+          "path": ".devcontainer/devcontainer.json",
+          "sha256": "41953066149e54d4252ac1ee8a31b615151a20dbf0fd207cdb78c76bf7e4759e",
+          "lines": 25
+        },
+        {
+          "path": ".github/dco.yml",
+          "sha256": "1d4549a574f33e1c0bc12dcd9173f1995d5668424c131a9ce3a22cfce7d8a76e",
+          "lines": 2
+        },
+        {
+          "path": ".github/workflows/deploy-and-test-cluster.yml",
+          "sha256": "1938b85120749321e2115b152af3464e7eee29a937f94f435c6c7aa07e640b63",
+          "lines": 31
+        },
+        {
+          "path": ".github/workflows/gradle-build.yml",
+          "sha256": "f7ec25e517e32b1f00e4969b8601307fa786a121635d44b98050e9d4191260ad",
+          "lines": 31
+        },
+        {
+          "path": ".github/workflows/maven-build.yml",
+          "sha256": "e3c6fccc37a71e7e3c7f17b7c348c4142c032403461c9a23ab23457b5dabc198",
+          "lines": 29
+        },
+        {
+          "path": ".gitpod.yml",
+          "sha256": "692845ab44f63292899862498c3a52df9cb7c1b8fea6f31cb75814227e98d0b1",
+          "lines": 9
+        },
+        {
+          "path": ".mvn/wrapper/maven-wrapper.properties",
+          "sha256": "488e1b3f2e641779d4636abf9390845f901e64607261bc3c0b0bfe4fe96e6706",
+          "lines": 3
+        },
+        {
+          "path": "LICENSE.txt",
+          "sha256": "56dfc19e0dc836e30177332f73e8e6fbc297941acf3d906eec6eaaa46c2c452a",
+          "lines": 202
+        },
+        {
+          "path": "README.md",
+          "sha256": "b53440fdf1a73969b7dcf3b3f1801dda2de31d5935439a739971b42f27e4f5bc",
+          "lines": 181
+        },
+        {
+          "path": "build.gradle",
+          "sha256": "e69845805301a92db8877b0f73a3705cf9131b4f548b1b270929c15b3f113afe",
+          "lines": 93
+        },
+        {
+          "path": "docker-compose.yml",
+          "sha256": "59e0a7d8a893bc73608ed0472910b85217e0832d10c06a6810f96b88d4970ebf",
+          "lines": 21
+        },
+        {
+          "path": "gradle/wrapper/gradle-wrapper.properties",
+          "sha256": "e0846bd420bf1543f500e0c9b35c01d84611b0f1afe01e24a82d0eca53c33ccb",
+          "lines": 9
+        },
+        {
+          "path": "k8s/db.yml",
+          "sha256": "e00db4a8151c0623a49757e6fa4942b640775159e98e7b0e38ddd8b9817a3838",
+          "lines": 73
+        },
+        {
+          "path": "k8s/petclinic.yml",
+          "sha256": "4068a7432bc61b2b3769d5e905e7ce37a79c7d73b4bc6e43199a1423bf3394bb",
+          "lines": 64
+        },
+        {
+          "path": "pom.xml",
+          "sha256": "7e61df0a43d538a5404e8130a55b8085541ec8e841fcf39f81bb6d3d81dcd2f4",
+          "lines": 440
+        },
+        {
+          "path": "settings.gradle",
+          "sha256": "f6468724ac5adae1f9e17c61eac5f20f849c6af43c8e2a94222d6e59ce6abce1",
+          "lines": 1
+        },
+        {
+          "path": "src/checkstyle/nohttp-checkstyle-suppressions.xml",
+          "sha256": "696098a186b1c0b7c77f0ecb3a66d181222386cea4e9ddefb06f6a56c8521e45",
+          "lines": 11
+        },
+        {
+          "path": "src/checkstyle/nohttp-checkstyle.xml",
+          "sha256": "c2d2e71ea2f598085dd25140e6820a3131b1d55d5544fe6a43ce5d4184e91045",
+          "lines": 10
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java",
+          "sha256": "9d99b4b59cc6e185e9a27964b24ede04180ca34211a7e19f968249ee3dac9df3",
+          "lines": 36
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/PetClinicRuntimeHints.java",
+          "sha256": "2a365e4c85ec16300ccc6101e2543980a30ea72c34c6a0c51d5e56c0d5ad6633",
+          "lines": 38
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+          "sha256": "2c8f47a328f8bc4ad0ed887890dcf731469ec8f1032b5420d173c7aa5a352600",
+          "lines": 51
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java",
+          "sha256": "6695dafa9b8d4cc67c0cf9305b17b897c58103ca33c12dd0f9375edcfe815b32",
+          "lines": 51
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/model/Person.java",
+          "sha256": "a872c368cd5b09a7cb8a3f42e1baff1f6b0adc7cfc5bccf5f426374292ba4244",
+          "lines": 57
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/model/package-info.java",
+          "sha256": "60ad8255055c10e2af03b3b456527ba28f8def8d520037eb7230f647a634b387",
+          "lines": 20
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "sha256": "a5273cbccaf4993c92cc204c4481d52ebc611b731862f078b203b2a7eefa5f8a",
+          "lines": 188
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "sha256": "611115841f671065ca2796fbb096102d56ce6aafd20bfe9a264f0a6968cca3ff",
+          "lines": 188
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+          "sha256": "654cc5a38b2806748116caf4fbd6a99010a35605db32a12707078c34ccec2cd9",
+          "lines": 62
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/Pet.java",
+          "sha256": "ec77c2d70ae043c6eb441e47ebc93a3d848d8ae9729068e8f4e997aedfa0bbd7",
+          "lines": 85
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "sha256": "1a8a8097ff334b85d3a62c4df79ec52c2dbee8777925970e140081cff7e7c25e",
+          "lines": 207
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/PetType.java",
+          "sha256": "9e64329633ce98a96f18cecf7426338d57b753fd24b7b47f7af483467a3df92e",
+          "lines": 30
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java",
+          "sha256": "af232944dba211094ee5f6b5b3e2bc9696e46ba8f40cad0e5bf7e0b283aacac7",
+          "lines": 62
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/PetTypeRepository.java",
+          "sha256": "696705e51ab5835ac28630397de2d3f3541d3f419f19461e11755a9aac2afa04",
+          "lines": 39
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java",
+          "sha256": "1cee4c2a57afd7edb3521fa7a19c4b643f23c2f5b91406ecd638319c6cce9f7f",
+          "lines": 69
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/Visit.java",
+          "sha256": "587191bc74fbbb696e90114366db6988cd6f07c25cd2e991c038d6bda52df123",
+          "lines": 70
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+          "sha256": "b7c8f9cb7b2b2b5827d85787d1f18c95762a0213760013cef9d0a9e1c2c0f8d8",
+          "lines": 114
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/package-info.java",
+          "sha256": "ef81fe2aec55635182295f564699812c334c9a6ccf85b0bae1fe7e38d487c05a",
+          "lines": 16
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/package-info.java",
+          "sha256": "517071851080c7b62c81842b14d0abf5a8cbc2b270fecd00b19ef580c9e29d59",
+          "lines": 16
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java",
+          "sha256": "1375dfc554a1efa859d2e54cf6fe82724aecea8b46d0c2ab06aabd1aa14ef9da",
+          "lines": 53
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/system/CrashController.java",
+          "sha256": "d7c003dc6357596eefa345eff63ecf3909a50238e030e3c93f09426e537ba517",
+          "lines": 37
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+          "sha256": "d9eb227f4ffcd434b2000ac30fce9b5e341f85e893c4b3536b50fbbc15384b92",
+          "lines": 60
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java",
+          "sha256": "cfdffa794c8ec7a0c634a7d39d39f9abc1dd2ddc4b4d7a591b341136015a6f66",
+          "lines": 30
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/system/package-info.java",
+          "sha256": "0abef93e8f17f46c984af46d98e7e5308dea22b4bce4cca6c7776d6773aa968a",
+          "lines": 16
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/vet/Specialty.java",
+          "sha256": "0fa07bcb3b7b4ddb380a278d98dcfe03bec5e3a1e42b9f08c555d75a6be256d0",
+          "lines": 32
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+          "sha256": "8548e47aaf310b276d5cc9f58976756339b16a02ac47944f778260f2ed121b78",
+          "lines": 74
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+          "sha256": "8fb67351a3d4b28c220a870178cb72998ef6dfaa303dd65f2e8c242eb2ddbbfa",
+          "lines": 81
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/vet/VetRepository.java",
+          "sha256": "732888e66084f9f94dd79c181e29dbbe2c752959c10ebf82b0940700f61c0dde",
+          "lines": 58
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/vet/Vets.java",
+          "sha256": "8a9b86de5dd337047eacd492f03526974d82e3765e0a628341a190ffb1bb1707",
+          "lines": 43
+        },
+        {
+          "path": "src/main/java/org/springframework/samples/petclinic/vet/package-info.java",
+          "sha256": "a30b355dc2cfabd423e1c9171331288f5e343d8746ad8d12363e9d3f87816fc3",
+          "lines": 16
+        },
+        {
+          "path": "src/main/resources/application-mysql.properties",
+          "sha256": "a9c49d859a6df2d2c0d3ebc9cfbef7b633593ad2610f162f5a09466b73a08123",
+          "lines": 7
+        },
+        {
+          "path": "src/main/resources/application-postgres.properties",
+          "sha256": "8ce709f68cabbd711d47856a73ec03a42f8fd1035aa6f4a96ae240ca768af4c5",
+          "lines": 7
+        },
+        {
+          "path": "src/main/resources/application.properties",
+          "sha256": "67c1e7e0a0443d290301449110005ab75d223add305ed9c06897437df686de0e",
+          "lines": 29
+        },
+        {
+          "path": "src/main/resources/banner.txt",
+          "sha256": "a1f737eeeb0a9b3dc9d6f9e0b991c9a1dced6db109d7309e7b7cb90f687f48e3",
+          "lines": 15
+        },
+        {
+          "path": "src/main/resources/db/h2/data.sql",
+          "sha256": "c2e67030c7e79b5dab10d6452d56ea3a234ebaf859dc1c0a8e724731df07a09f",
+          "lines": 53
+        },
+        {
+          "path": "src/main/resources/db/h2/schema.sql",
+          "sha256": "4ff59b25496040ae131160fb110a4207ff05ccab8e6695aa1ca79d963972e73c",
+          "lines": 65
+        },
+        {
+          "path": "src/main/resources/db/mysql/data.sql",
+          "sha256": "de5983e3f63069e89fdd5bfc4294b2a8458e1883f23b2cdb44abb216f26d0aee",
+          "lines": 53
+        },
+        {
+          "path": "src/main/resources/db/mysql/petclinic_db_setup_mysql.txt",
+          "sha256": "90ec2a23f78709c4e909dad0fac260acc6b54907cddd59fca24d1de9c6e532fc",
+          "lines": 36
+        },
+        {
+          "path": "src/main/resources/db/mysql/schema.sql",
+          "sha256": "f09e50bf4e8cec8a32df3aef0e00b815d89481fc386fad82f8ca1493caf0fa9c",
+          "lines": 56
+        },
+        {
+          "path": "src/main/resources/db/mysql/user.sql",
+          "sha256": "a0eb9310bd5a01dd47b622538d1d808a217a4a22478cd91bb6fee83c994c8002",
+          "lines": 11
+        },
+        {
+          "path": "src/main/resources/db/postgres/data.sql",
+          "sha256": "2d9e8bbf98d5267a15adb141342a67c5efef1e08de580fc7efa98c6d97b763a4",
+          "lines": 53
+        },
+        {
+          "path": "src/main/resources/db/postgres/petclinic_db_setup_postgres.txt",
+          "sha256": "19fb0228e4ca8c07d89f123204e7def18dcda519ff74819d0251dbcdbd958b29",
+          "lines": 19
+        },
+        {
+          "path": "src/main/resources/db/postgres/schema.sql",
+          "sha256": "c6e4b61e9ffabf2d89e2237738ac8a3a8b766030bd0a1b235e3f7b4be63221d0",
+          "lines": 53
+        },
+        {
+          "path": "src/main/resources/messages/messages.properties",
+          "sha256": "a42ec599fdd39375aa6ba848f4560f2c6366b09fa360631c9ab69051eb88328a",
+          "lines": 52
+        },
+        {
+          "path": "src/main/resources/messages/messages_de.properties",
+          "sha256": "2196a3bdfa98d7faa69567a67868933e98bcf370488ee184e977612ca2e4c420",
+          "lines": 52
+        },
+        {
+          "path": "src/main/resources/messages/messages_en.properties",
+          "sha256": "9a73ca97a971bcb58cf5819b00454e63c7339331d93f9ee4662162a838ad413b",
+          "lines": 1
+        },
+        {
+          "path": "src/main/resources/messages/messages_es.properties",
+          "sha256": "2150d5da4b9e486eb9907d4226e7ef4c06274cd99aa3e464860eac267fd36c9b",
+          "lines": 52
+        },
+        {
+          "path": "src/main/resources/messages/messages_fa.properties",
+          "sha256": "c80a395eee9cc7147b48fb4705401f57dbff6cfaf46da15050016c450d436ae6",
+          "lines": 52
+        },
+        {
+          "path": "src/main/resources/messages/messages_hi.properties",
+          "sha256": "4aca6c8603333662d9a9507d9d40f922718157b43a1ec9df49ee885f1ec7b440",
+          "lines": 54
+        },
+        {
+          "path": "src/main/resources/messages/messages_ja.properties",
+          "sha256": "f375a79014b4289571ef85ed290903bb08229afae77d55af452d0e45bd719b1b",
+          "lines": 54
+        },
+        {
+          "path": "src/main/resources/messages/messages_ko.properties",
+          "sha256": "7e8d64e2de5fed35b413c2215eff23dcac797e93a56efbe30b0b9fa51fb10bf0",
+          "lines": 52
+        },
+        {
+          "path": "src/main/resources/messages/messages_pt.properties",
+          "sha256": "f372835f966a8793d1b6553b04e50f92dcd19ea013dd8d0633dc680dd5ff2fe3",
+          "lines": 52
+        },
+        {
+          "path": "src/main/resources/messages/messages_ru.properties",
+          "sha256": "4fcb4afd2d30138996c019608c30f670b961647466dc9c37f173a899cc7d1d39",
+          "lines": 52
+        },
+        {
+          "path": "src/main/resources/messages/messages_tr.properties",
+          "sha256": "f73d06f2fc12d159b3b9fed831b3437f8b0245fb22f97e509df571b4f4cde103",
+          "lines": 52
+        },
+        {
+          "path": "src/main/resources/templates/error.html",
+          "sha256": "4803734326c42e1ba07b0f1b8e5471fbb919821188984f0abd6b28d02e7dea53",
+          "lines": 21
+        },
+        {
+          "path": "src/main/resources/templates/fragments/inputField.html",
+          "sha256": "5c6a3aca6d40db30508890d3e4833a0d0505d8deb36a751bc8eb554206ec9ad7",
+          "lines": 27
+        },
+        {
+          "path": "src/main/resources/templates/fragments/layout.html",
+          "sha256": "ed52e1986bad09c16367bdf97e5bafb6ca55f6754c7a24eab14d718b4cc44bd3",
+          "lines": 88
+        },
+        {
+          "path": "src/main/resources/templates/fragments/selectField.html",
+          "sha256": "bae17ba02ad58fbf59139cff8346c62352d56c4f977a06c414c8fdeec4a3eb98",
+          "lines": 27
+        },
+        {
+          "path": "src/main/resources/templates/owners/createOrUpdateOwnerForm.html",
+          "sha256": "a4672fd8918978eb6cbc975a202c948f7b1d525b596c7cb54fa7f637a3803c7f",
+          "lines": 25
+        },
+        {
+          "path": "src/main/resources/templates/owners/findOwners.html",
+          "sha256": "8e18cd0058ac41b8746aa21e6084f3e39b7c0a774defa918cfdc25513bf05c83",
+          "lines": 35
+        },
+        {
+          "path": "src/main/resources/templates/owners/ownerDetails.html",
+          "sha256": "adf2ef3ba0e6994f67bed35b6bf3ee9f7d3197af96bec35c90c003dba74bfbf2",
+          "lines": 96
+        },
+        {
+          "path": "src/main/resources/templates/owners/ownersList.html",
+          "sha256": "0592b5f3bd373b806e9bc7149f5d9667403f1b47cdb38d454cbffabdde82b6a0",
+          "lines": 61
+        },
+        {
+          "path": "src/main/resources/templates/pets/createOrUpdatePetForm.html",
+          "sha256": "b1af6097ef7275d1a59aa32e50835dc134702eb51a67aa0ed62e68b73deed268",
+          "lines": 34
+        },
+        {
+          "path": "src/main/resources/templates/pets/createOrUpdateVisitForm.html",
+          "sha256": "7c225e4ff3b1acf9bef865ca0c33b098f7c2581fba3923a4c02f6f42df0a7553",
+          "lines": 59
+        },
+        {
+          "path": "src/main/resources/templates/vets/vetList.html",
+          "sha256": "f3d365c7fbb347f829732f3d7d52b28a3256f026438e320b32da6df54d381ebb",
+          "lines": 57
+        },
+        {
+          "path": "src/main/resources/templates/welcome.html",
+          "sha256": "5c210fb0a3b5c32b1a2986beed3e4ca279df08b92e369ccc15cc65eda96d55ea",
+          "lines": 16
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+          "sha256": "d6d45501b3bf141644683974cab727d2982062962f74eb38a1f08c5087256fcd",
+          "lines": 74
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/MysqlTestApplication.java",
+          "sha256": "c74523e82c36e1d4fbde13fd308a47d1eb11c32c3265edae6930e4213b2d1a70",
+          "lines": 47
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/PetClinicConcurrencyTests.java",
+          "sha256": "2c85f0bc9e40966997c5ceab5d54de39a54f58973a9240d3e58178c36da3fc4a",
+          "lines": 134
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+          "sha256": "17efbf458ce0a5c54a4b46cedd6c7b16dd05d5bef2f332e94913bd46e28f5674",
+          "lines": 70
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+          "sha256": "2226b14986be562f616c55d25b61de358dd71633e3e3584990150c79f2aa69e8",
+          "lines": 150
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/model/ValidatorTests.java",
+          "sha256": "0e0bd7fa5639f7584ff75513a1a5194a6d238be14d22e0cacb7762c01aa53f28",
+          "lines": 80
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
+          "sha256": "f9fe569fcfcb91c6bb78e0df52050f95932eb6fd1ac64f909df24a95ce5c9be9",
+          "lines": 318
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/owner/OwnerTests.java",
+          "sha256": "a0c5366440acf52c330729cc301419acbc279d22c4bc252e0ae70aa02098095d",
+          "lines": 51
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java",
+          "sha256": "29f21b836ebe350364d9b3084bbb7f46c22d360203144d4a4b425e3583403588",
+          "lines": 274
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java",
+          "sha256": "137f03c4bc02c86f2d1cf100124ac67dd863e8281b4942b099b49e4a2fb95fc5",
+          "lines": 97
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/owner/PetValidatorTests.java",
+          "sha256": "91a7c7d4273233d61881519447af8690ace3e19f8a34fe4b874ad1534a462487",
+          "lines": 139
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java",
+          "sha256": "a36e3f10a758d39fdb75475cd15beec02352003a3b1a0d52d32bb906bb7d5d15",
+          "lines": 121
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+          "sha256": "b2ee15c0337a75ada96d83139fa08d81dd47d81c3094f5fca7917772770669bf",
+          "lines": 315
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java",
+          "sha256": "9e54d9b9976128b9aff1845201a8a8ced8ebfa0b7fdfd0904a6763ba31efa2a9",
+          "lines": 53
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/system/CrashControllerIntegrationTests.java",
+          "sha256": "e3237a6754842dccf92abc2ebfb7a515d79de55a482e165580ed2f39e529dbf3",
+          "lines": 101
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/system/CrashControllerTests.java",
+          "sha256": "1b7da80161788a0429a1949b421931aadd72fd5a1422b7cc0c2823c499c329df",
+          "lines": 41
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/system/I18nPropertiesSyncTest.java",
+          "sha256": "b99f0289c84aaa6d3fb1503ea9fdf8472171fe6e65dbb25f1cc9b820764c83f6",
+          "lines": 138
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/system/WelcomeControllerTests.java",
+          "sha256": "805bc085bfd0132307e82c20db0a36132df04bfec5b1f21addbefcf2a32ccfae",
+          "lines": 43
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java",
+          "sha256": "4f780c4065ac43088f7e6cbe4c293b019f00ac62a118263aee07ce7d80d6eb23",
+          "lines": 111
+        },
+        {
+          "path": "src/test/java/org/springframework/samples/petclinic/vet/VetTests.java",
+          "sha256": "d481304b6cfaa573b08d8c727402bb4f3fe61736e1a8b762a34a5571da86ac44",
+          "lines": 41
+        }
+      ],
+      "manifest_sha256": "bae39d0e8c8f89ea46382039cfd91574d512c70a79b46e4861a8f3b1636a62af"
+    },
+    {
+      "id": "flask",
+      "url": "https://github.com/pallets/flask",
+      "revision": "d086db856be187255b8ec61ef409357393020f32",
+      "language": "python",
+      "split": "development",
+      "license": "BSD-3-Clause",
+      "license_path": "LICENSE.txt",
+      "license_sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+      "source_manifest": [
+        {
+          "path": ".devcontainer/devcontainer.json",
+          "sha256": "b8fdd479fae20d10e0563d343d4a8e3fa728a88288ef8b24e9e9c761f1e00dc6",
+          "lines": 17
+        },
+        {
+          "path": ".devcontainer/on-create-command.sh",
+          "sha256": "b863a4cb17ddda2276b26ca97949e480a04fdd89000d8b3a292a95907cd0dafa",
+          "lines": 7
+        },
+        {
+          "path": ".github/ISSUE_TEMPLATE/bug-report.md",
+          "sha256": "d4828e11051d02342734b905c78ae9dfc2f611f7a373d9fd3c4cdf8895849388",
+          "lines": 27
+        },
+        {
+          "path": ".github/ISSUE_TEMPLATE/config.yml",
+          "sha256": "93fe05b934a1bc6f1537b211af1695401926b01e239b152449ed623f2258fe51",
+          "lines": 11
+        },
+        {
+          "path": ".github/ISSUE_TEMPLATE/feature-request.md",
+          "sha256": "09f7166294a022f7926f32a0c3a785706b3e777f53586dd2cfdf07ee172410b6",
+          "lines": 15
+        },
+        {
+          "path": ".github/pull_request_template.md",
+          "sha256": "f92d7fa6366d19dfed8f7b49e753c506c39bb17e23f0908da9dea408f0f07800",
+          "lines": 25
+        },
+        {
+          "path": ".github/workflows/lock.yaml",
+          "sha256": "e05f221702cb1f6eb8548c2c9c7e7a296228f5eabb7bb3d5e7c9e34f766936a6",
+          "lines": 26
+        },
+        {
+          "path": ".github/workflows/pre-commit.yaml",
+          "sha256": "eac3d145f47081e8ec73ce6f2b0b96738f9e64384b721863971bed2a8d8c10d1",
+          "lines": 29
+        },
+        {
+          "path": ".github/workflows/publish.yaml",
+          "sha256": "adafd17df08c2bf08cf4c13968a2c11063abb990d06989cc8131b333a72bedde",
+          "lines": 62
+        },
+        {
+          "path": ".github/workflows/tests.yaml",
+          "sha256": "b9e91de90c44bd4d2926296389d96e20c7105c979afbc228022c198c7b6bc51b",
+          "lines": 64
+        },
+        {
+          "path": ".github/workflows/zizmor.yaml",
+          "sha256": "bb524d24d8f07bb47ccc5530e3dab8d98b92ab08fdd1acf8afa26bd5d42e9131",
+          "lines": 22
+        },
+        {
+          "path": ".pre-commit-config.yaml",
+          "sha256": "f9d1956bed8163679b550fa8b93e0da170c19c2111266795cd250487b102933f",
+          "lines": 24
+        },
+        {
+          "path": ".readthedocs.yaml",
+          "sha256": "86214302cbc2ec1e25b78876a17947b130c43e08185cae6c67f0c9eb1d9eb9c4",
+          "lines": 10
+        },
+        {
+          "path": "LICENSE.txt",
+          "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+          "lines": 28
+        },
+        {
+          "path": "README.md",
+          "sha256": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "lines": 53
+        },
+        {
+          "path": "docs/conf.py",
+          "sha256": "a9732cff1ca5ee0420bc5f656df105c32cea32389033742c8f46dffab3b435cd",
+          "lines": 101
+        },
+        {
+          "path": "examples/celery/README.md",
+          "sha256": "c31bd98ee22d28e11f183815dfe5727342260d0582a3a5e89ab552c5611d34c8",
+          "lines": 27
+        },
+        {
+          "path": "examples/celery/make_celery.py",
+          "sha256": "ff32ebf85ef8791fc07177ffe2dad6020fad34a4a57831d37a8bd8531f6e6707",
+          "lines": 4
+        },
+        {
+          "path": "examples/celery/pyproject.toml",
+          "sha256": "093a91a28634f15a48c51dbd725ae553825f2d81f776d8b3a06e879ccc7eb153",
+          "lines": 22
+        },
+        {
+          "path": "examples/celery/requirements.txt",
+          "sha256": "96eaefbbd532b79f687e17d0418807257cddf6f9c1d15aad0b11683ebf23a382",
+          "lines": 58
+        },
+        {
+          "path": "examples/celery/src/task_app/__init__.py",
+          "sha256": "236d2c202af0c70b7b8a60f0b7b762eb5dafb941880474abe5e420967fa92355",
+          "lines": 39
+        },
+        {
+          "path": "examples/celery/src/task_app/tasks.py",
+          "sha256": "d2c365c8ed2f5abf0b5b109361ebe58941559b7d67e57f96d6a6b7bd69970364",
+          "lines": 23
+        },
+        {
+          "path": "examples/celery/src/task_app/templates/index.html",
+          "sha256": "2ca135b39b9e685a164001abd6d8acb985fec1e126c2a6f36fffbd59b2117f10",
+          "lines": 108
+        },
+        {
+          "path": "examples/celery/src/task_app/views.py",
+          "sha256": "cb9f3c9ebbb359bae6d49f55fd717700062691d2be60f1700e2abf7060082704",
+          "lines": 38
+        },
+        {
+          "path": "examples/javascript/LICENSE.txt",
+          "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+          "lines": 28
+        },
+        {
+          "path": "examples/javascript/js_example/__init__.py",
+          "sha256": "0dd1ca2216990b704405b1d0e2387432e2f7d0288eb5147784bbd8ebffac359a",
+          "lines": 5
+        },
+        {
+          "path": "examples/javascript/js_example/templates/base.html",
+          "sha256": "08d0064958cae81c9b2b30e50ba233195d211316b7e44988fad6ebfa4b42decd",
+          "lines": 33
+        },
+        {
+          "path": "examples/javascript/js_example/templates/fetch.html",
+          "sha256": "47c946da9cad2e382ffb69dd9cbde239dce4223e1128cc4b2292d396d3b0a4ca",
+          "lines": 33
+        },
+        {
+          "path": "examples/javascript/js_example/templates/jquery.html",
+          "sha256": "4fa2ef87d2f563ff3bfe54429eac4bdbb674aeebe1377efe38b3cba9d96f1643",
+          "lines": 27
+        },
+        {
+          "path": "examples/javascript/js_example/templates/xhr.html",
+          "sha256": "e0f2cbefc4be46244d9fc787a47c16dcecaabf26b91409ada20c5669861fa763",
+          "lines": 29
+        },
+        {
+          "path": "examples/javascript/js_example/views.py",
+          "sha256": "221cbb10e105b7463f25e0f296da6efc4db0346f49c6127f07168f283b3e70ca",
+          "lines": 18
+        },
+        {
+          "path": "examples/javascript/pyproject.toml",
+          "sha256": "d86a7577ac38b09613b280340d93585852990e4edd77746030b289517c74dbbc",
+          "lines": 38
+        },
+        {
+          "path": "examples/javascript/tests/conftest.py",
+          "sha256": "aff1ac8ea5b7c6e4d7adf67a0eae5c13cbb9adf38e1a2434e6cc7e6824c56b11",
+          "lines": 15
+        },
+        {
+          "path": "examples/javascript/tests/test_js_example.py",
+          "sha256": "52a0ce22402bb671b391cd278c2ab0865d2d5f9d6daf8d4387ef23337f0a026f",
+          "lines": 27
+        },
+        {
+          "path": "examples/tutorial/LICENSE.txt",
+          "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+          "lines": 28
+        },
+        {
+          "path": "examples/tutorial/flaskr/__init__.py",
+          "sha256": "cc44165ea4444bc114aedba76cf2f15451f182df97629317589d46902742f118",
+          "lines": 48
+        },
+        {
+          "path": "examples/tutorial/flaskr/auth.py",
+          "sha256": "a5ed5eaa05c6f6ee3e5bdb07b9e657a6e9320a115a68fd74b1cb4ac646680167",
+          "lines": 116
+        },
+        {
+          "path": "examples/tutorial/flaskr/blog.py",
+          "sha256": "c49c5f6e3db32d74bfac13633fd328ec904cb7159d76ca78f6956432076c1fd7",
+          "lines": 125
+        },
+        {
+          "path": "examples/tutorial/flaskr/db.py",
+          "sha256": "700f9d0a455bf79c9bf6de4f2784f13b96256faea19c15ddee71fb7957e14c31",
+          "lines": 56
+        },
+        {
+          "path": "examples/tutorial/flaskr/schema.sql",
+          "sha256": "c23021b8a5229cedd3191825850e963f393790a794d31ac2f83846a0c5d559f7",
+          "lines": 20
+        },
+        {
+          "path": "examples/tutorial/flaskr/static/style.css",
+          "sha256": "b7724c7981be21b5a13484c8f7eb9df306f06a88406db3dc7619b80aa040e372",
+          "lines": 134
+        },
+        {
+          "path": "examples/tutorial/flaskr/templates/auth/login.html",
+          "sha256": "f0d4ee341a19c8f9d51a66c5da624e687e58de7e3fb2ca41c6f5b8d07e20a6c1",
+          "lines": 15
+        },
+        {
+          "path": "examples/tutorial/flaskr/templates/auth/register.html",
+          "sha256": "53da308c1d62f057613ec8e445eb70e89404288f503156102d1e3e39ec5b2153",
+          "lines": 15
+        },
+        {
+          "path": "examples/tutorial/flaskr/templates/base.html",
+          "sha256": "a3c74c6ba8ae95bd3b4b63c0bcf5712944c5b954578514c1316a248db0949b07",
+          "lines": 24
+        },
+        {
+          "path": "examples/tutorial/flaskr/templates/blog/create.html",
+          "sha256": "f41e3166cfd09d41a88def1896fb93631e707b0d9968b14ccb00953263e20025",
+          "lines": 15
+        },
+        {
+          "path": "examples/tutorial/flaskr/templates/blog/index.html",
+          "sha256": "67cdf10979b06f697953477d0ee8043e56a11ebe87b03b307ada12d13a240617",
+          "lines": 28
+        },
+        {
+          "path": "examples/tutorial/flaskr/templates/blog/update.html",
+          "sha256": "0e16cd0d933914628e890411dcddd7527fb96b5a7c9113390d93b3e79b44b5ad",
+          "lines": 19
+        },
+        {
+          "path": "examples/tutorial/pyproject.toml",
+          "sha256": "1b2ff9761cb43059ed8df3f1c27d93cd93c3bf9297fe7fe5716da943a75012ac",
+          "lines": 45
+        },
+        {
+          "path": "examples/tutorial/tests/conftest.py",
+          "sha256": "2778b7c035d917bb0909ec6ee2f9d61ccba030ff8ae635ff65a52c133ec5afca",
+          "lines": 62
+        },
+        {
+          "path": "examples/tutorial/tests/data.sql",
+          "sha256": "244a542220a64bdbf9bd3340f8280551b95e6d3248ead974fdd0a07a7dd06a0c",
+          "lines": 8
+        },
+        {
+          "path": "examples/tutorial/tests/test_auth.py",
+          "sha256": "cbbe178c9980d8499561d8eae72f01b8abeead2fa10c9d5f71427da4af38a938",
+          "lines": 69
+        },
+        {
+          "path": "examples/tutorial/tests/test_blog.py",
+          "sha256": "a4c01c486e86aed522c3ade398bf4016f6ef59bbada2c7c5f69eb55ce297877c",
+          "lines": 83
+        },
+        {
+          "path": "examples/tutorial/tests/test_db.py",
+          "sha256": "324baea21b981575b4e6d92b6517f21ec2ad86a6138010863a9fcfb4f984e649",
+          "lines": 29
+        },
+        {
+          "path": "examples/tutorial/tests/test_factory.py",
+          "sha256": "1906cfed379afe315b6ad7db3c71c951ac87c53b57b28b04b5b6c84df2a79e01",
+          "lines": 12
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "4a55dd7e69bca85ecba232489bda7f89bb8620dde35e8f5eb08a92f4087d74cb",
+          "lines": 272
+        },
+        {
+          "path": "src/flask/__init__.py",
+          "sha256": "2daebda4dc29fed5cb36c912a6115a234e9a4b5f9c33fd795e4bfeffd0cc9386",
+          "lines": 39
+        },
+        {
+          "path": "src/flask/__main__.py",
+          "sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "lines": 3
+        },
+        {
+          "path": "src/flask/app.py",
+          "sha256": "510b83880097af4450933561cba96e5a1c432bf53ea9264ca947da53752e3a2b",
+          "lines": 1625
+        },
+        {
+          "path": "src/flask/blueprints.py",
+          "sha256": "a79404da5635f0622d6ddaff44a46967c0e8d7b8343ef4062206644940e15f69",
+          "lines": 128
+        },
+        {
+          "path": "src/flask/cli.py",
+          "sha256": "1f476f816464b4250caaf6cc6fdf3f5fc956456a7da61cb7d0a1e03e3e7e5f3b",
+          "lines": 1126
+        },
+        {
+          "path": "src/flask/config.py",
+          "sha256": "3e2a85d033da9ba1d6d051f8087d61a574c17b7d0d4b38cf10ec2bcf56fa92dd",
+          "lines": 367
+        },
+        {
+          "path": "src/flask/ctx.py",
+          "sha256": "e21952d044159438765eb27848b0fe4c75f83faee8645181a09a1eccb1d5cab7",
+          "lines": 540
+        },
+        {
+          "path": "src/flask/debughelpers.py",
+          "sha256": "75c8258dc3487e1d0857dc5d3c7ca471fac1a254282570fa57e56d71aada037e",
+          "lines": 179
+        },
+        {
+          "path": "src/flask/globals.py",
+          "sha256": "1abe9a4e0a96c8bb28c232e2b08993fffdfb9bb694be2230755e54a46a40ca4d",
+          "lines": 77
+        },
+        {
+          "path": "src/flask/helpers.py",
+          "sha256": "4e2b647be02a93f655ddd058105c5ed8e9ffe3daef398ef3dd21e3a3817623fb",
+          "lines": 679
+        },
+        {
+          "path": "src/flask/json/__init__.py",
+          "sha256": "b402bd0b89b87250f932bf4b8e2bec7af7130a8ebdc3ff5a0bba3865e9984173",
+          "lines": 170
+        },
+        {
+          "path": "src/flask/json/provider.py",
+          "sha256": "cefdd0dfdde6bb6f73e7b853aa789de432e2af52a8c920c1c2af17228235b72c",
+          "lines": 215
+        },
+        {
+          "path": "src/flask/json/tag.py",
+          "sha256": "0e168dc2e20e85db7647be28382f58e19f19a6bc4562245be5d50fe5bcb220dc",
+          "lines": 327
+        },
+        {
+          "path": "src/flask/logging.py",
+          "sha256": "f2c33758c4ee6e2d5c05bd9cfe53e45a937427c74c02aae029160b2e2d5d0952",
+          "lines": 79
+        },
+        {
+          "path": "src/flask/sansio/README.md",
+          "sha256": "86d131556c111d01ca60ea07b5d99d0bc2af464f36043a1df63f0b647f3f9c37",
+          "lines": 6
+        },
+        {
+          "path": "src/flask/sansio/app.py",
+          "sha256": "cf5df9f2972be7cad9878df7ea321804617d769f47823984abbe0a9b1cbc460b",
+          "lines": 1014
+        },
+        {
+          "path": "src/flask/sansio/blueprints.py",
+          "sha256": "da960c5792daf2f1cef8c14113d9c95c8ce389a9689abb395fe867f4054d0ba1",
+          "lines": 692
+        },
+        {
+          "path": "src/flask/sansio/scaffold.py",
+          "sha256": "d6578d2b5f06d227482e4110f8b750d04c8d94c9525c8857f9183f727ee2858b",
+          "lines": 800
+        },
+        {
+          "path": "src/flask/sessions.py",
+          "sha256": "26fa7cc311b841f8409ad93933d3a3a52b068150c6f15fc3cd0c107e7a9aaf9d",
+          "lines": 385
+        },
+        {
+          "path": "src/flask/signals.py",
+          "sha256": "57b94c530c3b0aa809d93854067d4f89ab59b506a73b2b7b399a6ed86648fb7e",
+          "lines": 17
+        },
+        {
+          "path": "src/flask/templating.py",
+          "sha256": "3ed7a044a96c911267e855b7359d9f159f06321f75fbe678a6656923d5e0989e",
+          "lines": 212
+        },
+        {
+          "path": "src/flask/testing.py",
+          "sha256": "629d481658aaec7076a55913eda38c270ec45d430b34b2f9d38b2eec2b0ad3da",
+          "lines": 298
+        },
+        {
+          "path": "src/flask/typing.py",
+          "sha256": "ac3b0f12bf2a89e10c6b8f04d142b6103f9f1495030b8ff2c559d9952e060a00",
+          "lines": 87
+        },
+        {
+          "path": "src/flask/views.py",
+          "sha256": "d0d5ceecd117533169c924cdbb01ea5bb0ee74b7b1c4b22855f73f0e4dea0ee7",
+          "lines": 191
+        },
+        {
+          "path": "src/flask/wrappers.py",
+          "sha256": "8d492fe2655e93622ae21c3177846faab20c6faf41bf43c49438162e6779391a",
+          "lines": 257
+        },
+        {
+          "path": "tests/conftest.py",
+          "sha256": "494e5b41163f45cac5797acb37bde499fbbed5dbdc21a2df7090a5353617586f",
+          "lines": 112
+        },
+        {
+          "path": "tests/static/config.json",
+          "sha256": "28d7be9c2566e893e5e2da9eec54951032b55485fefc36ab4d53fa97b271c981",
+          "lines": 4
+        },
+        {
+          "path": "tests/static/config.toml",
+          "sha256": "1551d036dd594e88079db2179d045df595760af46dd6c80c11ef828fa2f7a02a",
+          "lines": 2
+        },
+        {
+          "path": "tests/static/index.html",
+          "sha256": "7f6f02fe6b981005a81f27dab9bc6d8be4cb074c0c8c5647208ddef5346c9ac2",
+          "lines": 1
+        },
+        {
+          "path": "tests/templates/_macro.html",
+          "sha256": "5c0daa9f0a49a4eddab928d994a5ce0f3794e057278a6d7689ee6531778bf26b",
+          "lines": 1
+        },
+        {
+          "path": "tests/templates/context_template.html",
+          "sha256": "857bc7cdd820b2aa8ed9e5d195be848460d34f33c842271a324d8489bcda8034",
+          "lines": 1
+        },
+        {
+          "path": "tests/templates/escaping_template.html",
+          "sha256": "3913ccdd020e22efe55aff4cd74d5b3c766df9b9b2f018aedbaeb7680a0ee748",
+          "lines": 6
+        },
+        {
+          "path": "tests/templates/mail.txt",
+          "sha256": "f1ff63d4fc54a3f75e19bae926e0ddae28b5eaa13ec6d57d454ea660f544ffae",
+          "lines": 1
+        },
+        {
+          "path": "tests/templates/nested/nested.txt",
+          "sha256": "efa3e5343b700d55a364c3c746506a497f798d8e767bf45664224a65f4569005",
+          "lines": 1
+        },
+        {
+          "path": "tests/templates/non_escaping_template.txt",
+          "sha256": "a1bf0b2dc534994c5cd3e2eddee3d81b7c9be229dfc35c57284507576c0fe214",
+          "lines": 8
+        },
+        {
+          "path": "tests/templates/simple_template.html",
+          "sha256": "7746a4931590d544240e22f8e5bf2752f084d0aa4be7bf43862a1896fef5ddb1",
+          "lines": 1
+        },
+        {
+          "path": "tests/templates/template_filter.html",
+          "sha256": "1e499ffeb7db1bdb46ad1a26ca8b37bd0d87f2e7ebc1ef81d912fed8b7c525a0",
+          "lines": 1
+        },
+        {
+          "path": "tests/templates/template_test.html",
+          "sha256": "8376605103743da3a2cf6f3dfc0c4d78fdc809f476f688336d09777c2bf12bff",
+          "lines": 3
+        },
+        {
+          "path": "tests/test_appctx.py",
+          "sha256": "0cef6858e010be5ae233f622972ce04d90efb0a8cc2a57eab1a80afc12e87fe2",
+          "lines": 259
+        },
+        {
+          "path": "tests/test_apps/blueprintapp/__init__.py",
+          "sha256": "87622ebc37bcfe87d81be1437e4b97a4c2a8341eb3df38461dd37a0b89db07d3",
+          "lines": 9
+        },
+        {
+          "path": "tests/test_apps/blueprintapp/apps/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "lines": 0
+        },
+        {
+          "path": "tests/test_apps/blueprintapp/apps/admin/__init__.py",
+          "sha256": "5e849dc6984b0b3944ea687e40d96da9d5a9f42e32aa5b4035dedef4558ad83d",
+          "lines": 20
+        },
+        {
+          "path": "tests/test_apps/blueprintapp/apps/admin/static/css/test.css",
+          "sha256": "1750c6f80056de8eb2003f4d73a23357d89879f65e387867e7dd34f4b3096e86",
+          "lines": 1
+        },
+        {
+          "path": "tests/test_apps/blueprintapp/apps/admin/static/test.txt",
+          "sha256": "95c3e2ba78ba2d1febc399b1ca3466cfc88c7227e249236a3c5948ae62cace36",
+          "lines": 1
+        },
+        {
+          "path": "tests/test_apps/blueprintapp/apps/admin/templates/admin/index.html",
+          "sha256": "d8e592e9062ac5a6ab9d901690bbda9b43f6412a1d44d900e8cd397843952f0e",
+          "lines": 1
+        },
+        {
+          "path": "tests/test_apps/blueprintapp/apps/frontend/__init__.py",
+          "sha256": "1630cefb5d073808e8b4164e4d910f69aee57a93eaee53debb575e7e7aabb83f",
+          "lines": 14
+        },
+        {
+          "path": "tests/test_apps/blueprintapp/apps/frontend/templates/frontend/index.html",
+          "sha256": "85c0bb0ce45263118d2b90c0202571d41785565cda6a7c5c2213834309bdaf08",
+          "lines": 1
+        },
+        {
+          "path": "tests/test_apps/cliapp/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "lines": 0
+        },
+        {
+          "path": "tests/test_apps/cliapp/app.py",
+          "sha256": "b0c37142ff064f6d7f3ca21b8acec34a0657cf1a7c354178d5e3acc0879c7467",
+          "lines": 3
+        },
+        {
+          "path": "tests/test_apps/cliapp/factory.py",
+          "sha256": "3a93cd69f200848e8ffef6b2abdaa5803fb5044981ab64297f8c7d6541820570",
+          "lines": 13
+        },
+        {
+          "path": "tests/test_apps/cliapp/importerrorapp.py",
+          "sha256": "5ad812b09337f9699cd2b6aeebfd7d6f14045451de846b0503d746a34ce8a8c4",
+          "lines": 5
+        },
+        {
+          "path": "tests/test_apps/cliapp/inner1/__init__.py",
+          "sha256": "d3885f0114c83025a754fb3a8582634946541c9aeb72fe4f90af27554a6d4c83",
+          "lines": 3
+        },
+        {
+          "path": "tests/test_apps/cliapp/inner1/inner2/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "lines": 0
+        },
+        {
+          "path": "tests/test_apps/cliapp/inner1/inner2/flask.py",
+          "sha256": "570567aafaf185348cffa097d904b964c44fe1a92c5ec82488b97e3d93dbab38",
+          "lines": 3
+        },
+        {
+          "path": "tests/test_apps/cliapp/message.txt",
+          "sha256": "f41c9f8b6285b72bbd8f18a781c679d49741835c0ac49b5cd953768002e191de",
+          "lines": 1
+        },
+        {
+          "path": "tests/test_apps/cliapp/multiapp.py",
+          "sha256": "0580225ea4edb705c2e412c5ac6bd27d659cc239f0243467a33eaa9ee74675fc",
+          "lines": 4
+        },
+        {
+          "path": "tests/test_apps/helloworld/hello.py",
+          "sha256": "42722083156af9f3eb82e3a88403f4191b9dfcb5f9e1c3432e79f02827b0ccf1",
+          "lines": 8
+        },
+        {
+          "path": "tests/test_apps/helloworld/wsgi.py",
+          "sha256": "c1d5a162364e71546a8a8b76eb7fba0381582b8546ad14189f6431e647b7a547",
+          "lines": 1
+        },
+        {
+          "path": "tests/test_apps/subdomaintestmodule/__init__.py",
+          "sha256": "31e4dbd8ce53affded865990aea6a44db0bc46a0f44ee3fd6c14106f84a65cad",
+          "lines": 3
+        },
+        {
+          "path": "tests/test_apps/subdomaintestmodule/static/hello.txt",
+          "sha256": "e4fbc4e56428293f5d5e439367adef7c6f45d22032b324e64935f4740e2e8902",
+          "lines": 1
+        },
+        {
+          "path": "tests/test_async.py",
+          "sha256": "0a6a50bfd651581478abe8cda5c94aba6d70df35567a220aabc7ba08202d471c",
+          "lines": 145
+        },
+        {
+          "path": "tests/test_basic.py",
+          "sha256": "0d0d7928be4dbb0c9471d9ab8f47d954d0201634790c606dfff9453619914390",
+          "lines": 1974
+        },
+        {
+          "path": "tests/test_blueprints.py",
+          "sha256": "9c7e1a3caf96db080ed22d52dcab8994f7e64381a06b5aa7f605eff62e8b21fc",
+          "lines": 1115
+        },
+        {
+          "path": "tests/test_cli.py",
+          "sha256": "066c90f03644783021eef5cc99bb82a0b8795bd4281397190ca6182179060137",
+          "lines": 703
+        },
+        {
+          "path": "tests/test_config.py",
+          "sha256": "7d110748a4a2aad90c33489f4a50da0ac6aa19d64aab5414929be8a3fbb44dcf",
+          "lines": 250
+        },
+        {
+          "path": "tests/test_converters.py",
+          "sha256": "4f529ca6ee85a88c487a488807ff30cb8e4672307b9017f348174a67a5984347",
+          "lines": 42
+        },
+        {
+          "path": "tests/test_helpers.py",
+          "sha256": "04d700b48f3d5e3139ebe1e162df30bf9a223213c82c50b4f77b3692b111c011",
+          "lines": 377
+        },
+        {
+          "path": "tests/test_instance_config.py",
+          "sha256": "26466b388aabecbce19f2122bf0631e964bb79fdab84eae4716fe488d71b3857",
+          "lines": 111
+        },
+        {
+          "path": "tests/test_json.py",
+          "sha256": "f6c73c61a602ee3b8b87bfa90284fbc96e567b77c3a6d86c0e3919c5f12b64c6",
+          "lines": 346
+        },
+        {
+          "path": "tests/test_json_tag.py",
+          "sha256": "a581f4c910c544328b7140ce65fa3b3c0399f0981d5079ea02b09359427d463c",
+          "lines": 86
+        },
+        {
+          "path": "tests/test_logging.py",
+          "sha256": "311ea43751a836c3d585a40f08fa54a60d783a232aa50c5ea1225b689e9ac683",
+          "lines": 98
+        },
+        {
+          "path": "tests/test_regression.py",
+          "sha256": "2749a17454a9aa8a610a2213d739046488af06fe742da1c06802d00ab28a3bf8",
+          "lines": 30
+        },
+        {
+          "path": "tests/test_reqctx.py",
+          "sha256": "93d7f891096b037099b4770fb3498019436c4fa16062a0b99ea610af3ce32c5a",
+          "lines": 249
+        },
+        {
+          "path": "tests/test_request.py",
+          "sha256": "4e9b4bb6fa9ec22285bf8c5004bec5a32d25b60ab1717acd38f98ed8f6ec63c4",
+          "lines": 70
+        },
+        {
+          "path": "tests/test_session_interface.py",
+          "sha256": "e898a1d162e524d36325f474e353a748ddeb3c2d5ac7b863c32c78ca219b25c3",
+          "lines": 28
+        },
+        {
+          "path": "tests/test_signals.py",
+          "sha256": "eaa27de84a44ad1f1b0baa883ec7b76793ee0973362646a7f93ebb7d5e3b2abe",
+          "lines": 181
+        },
+        {
+          "path": "tests/test_subclassing.py",
+          "sha256": "8d2b60b6f231bb0af1dc89cbe02e61c1f0907bbb1d23a1d1a5916699118694c5",
+          "lines": 21
+        },
+        {
+          "path": "tests/test_templating.py",
+          "sha256": "fe9037d2bc5c67c031e9a78df9686ce84f919e973498a3e9706c40fddb360f4e",
+          "lines": 532
+        },
+        {
+          "path": "tests/test_testing.py",
+          "sha256": "5b3a6244c709b4102e921f79a949ac82f0db99efd59e671c464731fdfceab63d",
+          "lines": 398
+        },
+        {
+          "path": "tests/test_user_error_handler.py",
+          "sha256": "f05213bb275e08d354bf9750eb3a37aeb8fc713a8beee7edcdd3078d11af9d60",
+          "lines": 295
+        },
+        {
+          "path": "tests/test_views.py",
+          "sha256": "1fb41b3d4d3228624c9ec60ca66ac8ad7614626d78497c9f057d6aca312cd0e0",
+          "lines": 271
+        },
+        {
+          "path": "tests/type_check/typing_app_decorators.py",
+          "sha256": "1236df0a3447c828b1401cc56a31f1b988d6a4aa4944e63bf678c5470e373859",
+          "lines": 32
+        },
+        {
+          "path": "tests/type_check/typing_error_handler.py",
+          "sha256": "6ca69ec7b4813dfac97080cfb49b9c2d41acab44351e86620e337e1f25674604",
+          "lines": 33
+        },
+        {
+          "path": "tests/type_check/typing_route.py",
+          "sha256": "4554c7c77994fdd2ba2a8c50756c418aba619707f3e951551f26e8e9fd37c72a",
+          "lines": 112
+        }
+      ],
+      "manifest_sha256": "1153e970552c458da742c6b67d0d8a2c75a5682cd9fb89583ced581b6e12144a"
+    },
+    {
+      "id": "mall-tiny",
+      "url": "https://github.com/macrozheng/mall-tiny",
+      "revision": "a81ec4740a0c7c99a06ebffb43a14168beadffc3",
+      "language": "java",
+      "split": "held-out",
+      "license": "Apache-2.0",
+      "license_path": "LICENSE",
+      "license_sha256": "e11a67ef4c4eacc1644efa38d6503dad2afa57424bd5c8f34a4a1a31b7e9b0b9",
+      "source_manifest": [
+        {
+          "path": "Dockerfile",
+          "sha256": "986b70524f5a4181c0f9c6c5fad72fecda191fb152501e77e1038ce6dd54fab9",
+          "lines": 10
+        },
+        {
+          "path": "README.md",
+          "sha256": "7f96fceffd567a71cf1105237ee01b44f012ca84677f6168074c9542b1330e19",
+          "lines": 375
+        },
+        {
+          "path": "docker-compose.yml",
+          "sha256": "87cf009424ea843d205f98d636c7613d898d0d694a0af75d88e8dd013d792b0a",
+          "lines": 26
+        },
+        {
+          "path": "pom.xml",
+          "sha256": "5af19ae0a920eeb17f68725aa433efb19fe053db708c748cd898753c517b7e4b",
+          "lines": 203
+        },
+        {
+          "path": "sql/mall_tiny.sql",
+          "sha256": "ad9e727556a0fed83bf79e6c39bc5964eb7e1e545fe7b45cc9e26ad897c13b53",
+          "lines": 361
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/MallTinyApplication.java",
+          "sha256": "fb050682614ed9d4b5d9c165820c62501981a83af831adf1d0ee25a730dc7ec1",
+          "lines": 13
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/api/CommonPage.java",
+          "sha256": "2f6b9ed5dbcfbe9c2f48e14550870f5e5e842998f88c57de587926e977b3d047",
+          "lines": 71
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/api/CommonResult.java",
+          "sha256": "b1a4006ceb2b37882ea895fc9c285039feae97e81c29011d2af7f74a40934f1a",
+          "lines": 124
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/api/IErrorCode.java",
+          "sha256": "168bda1d24580af1a3c6dbd5c354105914b6ab5b486bc6d33b20a0eb76325e9a",
+          "lines": 11
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/api/ResultCode.java",
+          "sha256": "9f0de73b1bd8738991d3074b492a5428752de1a35524f8227c7cfc87d63dff22",
+          "lines": 28
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/config/BaseRedisConfig.java",
+          "sha256": "f8f2c773110ed04035a0fe8d579da4a8379625e6d80e624fbfdb72cdd83417cd",
+          "lines": 68
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/config/BaseSwaggerConfig.java",
+          "sha256": "c32df39bdd43b887438df96d037483161c0366071d2dbcbaaaca9dc40e71acf3",
+          "lines": 81
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/domain/SwaggerProperties.java",
+          "sha256": "d90eac7bd8fa1eb258887027702ce46de2dff9a1ec3545446bee9af0c7a4cf94",
+          "lines": 47
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/exception/ApiException.java",
+          "sha256": "39beca3e39bf326351b9f48b037d3aa0bc424c3f28a857aee3711aee2fdfe2d1",
+          "lines": 33
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/exception/Asserts.java",
+          "sha256": "d073e2965957b07522273a79f58e6e993b9fdd93415396fe5d6c53b3283a1f80",
+          "lines": 18
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/exception/GlobalExceptionHandler.java",
+          "sha256": "57f871a78969be43faac1eb156d42d8b83d250f7ee4d46075228548c4c75b1c5",
+          "lines": 55
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/service/RedisService.java",
+          "sha256": "0f69af2c3cebc57194bf65f830504345c5deb32e2263b87793b69ee273622d12",
+          "lines": 182
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/common/service/impl/RedisServiceImpl.java",
+          "sha256": "b5c376b845fd5912cd846aeb4be9c17fb411a5d845a6e9a052c6d90c2c795029",
+          "lines": 197
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/config/GlobalCorsConfig.java",
+          "sha256": "439b42a6d8f292548fb9ef47d6468277374c915b3df32014f632ca05d1aafefa",
+          "lines": 36
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/config/MallSecurityConfig.java",
+          "sha256": "ab505e43517255e0e69c965c383ebca54bdf502e8f55cc09a403d748f22d5c17",
+          "lines": 53
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/config/MyBatisConfig.java",
+          "sha256": "d2938b5369266a907ac6fd0ae787a1169a4bb0557b2da0d6ac80222ca9a5d4df",
+          "lines": 27
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/config/RedisConfig.java",
+          "sha256": "290dfb15e34fae961cee77661b9276e138d0ad994338c5fa5f2b4fc7fa2f108a",
+          "lines": 15
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/config/SwaggerConfig.java",
+          "sha256": "073e3a472f96359f4b3a201d83dab9cdd7610181062e1bb7879fcb198e942d92",
+          "lines": 71
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/domain/AdminUserDetails.java",
+          "sha256": "c552f656da351e7e5c989489c282d764e07b05a9fa3b76695ba9b138647057e0",
+          "lines": 62
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/generator/MyBatisPlusGenerator.java",
+          "sha256": "c8918fbb1163e67472ad00a424ea5ff90968d8137aa37b32a1bff737aa6f67d0",
+          "lines": 139
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/controller/UmsAdminController.java",
+          "sha256": "cd2a2772c62986d869280644ee4a03bb3c2b896b020718b1dacf7070a3b63d39",
+          "lines": 206
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/controller/UmsMenuController.java",
+          "sha256": "9d8287809194d1ccd9b64d97447c69a5e9345dfe35100dc2e03cff037935ed01",
+          "lines": 105
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/controller/UmsResourceCategoryController.java",
+          "sha256": "ac8868365055ed6024f205f69522172afabe43ff9a264dc78550e85bfc74ef4e",
+          "lines": 72
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/controller/UmsResourceController.java",
+          "sha256": "bb84201cfed3b1e0a363d1f7d6f33063c920c85ff8c31a880e5b7b5214399cf0",
+          "lines": 100
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/controller/UmsRoleController.java",
+          "sha256": "f588bb02fd351cf800a552b6c44e97899d865a255ac1d5cb0942c24352b9a236",
+          "lines": 130
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/dto/UmsAdminLoginParam.java",
+          "sha256": "b118cf59c62a5dc4e191263a43a847d328bebaa9b83143aa0e25cc65e0aa4941",
+          "lines": 22
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/dto/UmsAdminParam.java",
+          "sha256": "6bcce8a9567560518c207cb39d393086f8c26343dc160545f78b4ac59f237a06",
+          "lines": 32
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/dto/UmsMenuNode.java",
+          "sha256": "fd1b2280134c722176d81ab0c51060ca88943fbc88c9f7780eaa441e4062ba93",
+          "lines": 19
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/dto/UpdateAdminPasswordParam.java",
+          "sha256": "e28b3e72ecc24bfa053159324951374bc516c2849c5965bd8f9d0f6c8357400f",
+          "lines": 25
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/mapper/UmsAdminLoginLogMapper.java",
+          "sha256": "14cae3ea1f3752309d2d59ec3bc0cc6c93c46dbefd961ee084b55e4252c33b01",
+          "lines": 16
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/mapper/UmsAdminMapper.java",
+          "sha256": "bdff7e7c51323438c8d6781b53738d8ec32ef4eb7b1eddd3e72bbb99680f21dd",
+          "lines": 24
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/mapper/UmsAdminRoleRelationMapper.java",
+          "sha256": "c7b3b41429d6da400ed0a2339d2ad6400e791985c8f93352b1a28d31c4a78084",
+          "lines": 21
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/mapper/UmsMenuMapper.java",
+          "sha256": "01e40e5fb973c2d37b33d4d5af05a0d15def739ae6ba8fae16f0f1ab5ad8942d",
+          "lines": 28
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/mapper/UmsResourceCategoryMapper.java",
+          "sha256": "b0884431a8d708f8fb2ec3f5276411d75fe12afbabbd2aa61f41244e9a84f16b",
+          "lines": 16
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/mapper/UmsResourceMapper.java",
+          "sha256": "f156e87c71f2740fd963858cd797d9d44135ad80cd50486f7fd983196579bbb8",
+          "lines": 29
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/mapper/UmsRoleMapper.java",
+          "sha256": "98e9a8a9a83617b2097ce192557585e106a720f17e928eb298f8ce6f4be7d47a",
+          "lines": 24
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/mapper/UmsRoleMenuRelationMapper.java",
+          "sha256": "d9bbd996a0c5ca91def032dc7858766c38eff6164ffb1e4444f2a28cc5db1119",
+          "lines": 16
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/mapper/UmsRoleResourceRelationMapper.java",
+          "sha256": "9af86e0f11e4dee3136cdc13a6d5d2a1e3a57d38186611f18bd075d8392c41d4",
+          "lines": 19
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/model/UmsAdmin.java",
+          "sha256": "948729261f5a16a9d4c83fde8a378ed502b5e2bd095246e26d79575ed461e8c6",
+          "lines": 58
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/model/UmsAdminLoginLog.java",
+          "sha256": "8ac6fb447736f82c2850a57d2386a89ef317c458ba4275611409c88a1fd052c3",
+          "lines": 44
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/model/UmsAdminRoleRelation.java",
+          "sha256": "1ed1c68793ee64b90e1ad88ceb1e076c3742ac517233dca1f17d5ce253511213",
+          "lines": 36
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/model/UmsMenu.java",
+          "sha256": "504b45c4bb0c4986b359dbe5d0b26a2b8dd615dc757d61208b2ebc09f8e2066c",
+          "lines": 57
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/model/UmsResource.java",
+          "sha256": "a6a6e5399671cf69df1fe3742cf213e01dc5be207f0324c663744e23e688e3ff",
+          "lines": 48
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/model/UmsResourceCategory.java",
+          "sha256": "0cb82e1503d0476dbd79da6b1eaadf05facecbe059d5b2010d99d4d7ef9bd49a",
+          "lines": 42
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/model/UmsRole.java",
+          "sha256": "87f7bbb5acfbf747c42cbd44a30574401c42d910b00bfc4143c1e8ed16a45604",
+          "lines": 50
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/model/UmsRoleMenuRelation.java",
+          "sha256": "3d641bbf8354f2e3c52c0b71c9fb708b940b12a78783a7f23255b37c3259fcc3",
+          "lines": 38
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/model/UmsRoleResourceRelation.java",
+          "sha256": "d7db34cb357f193eb24cfa629ba346916286600ef17ad1c5da4d3efb561d9f09",
+          "lines": 38
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/UmsAdminCacheService.java",
+          "sha256": "15eec4e383c78e1ad95e36409e64b27921a14efbb13838305338b6fcd449cab0",
+          "lines": 59
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/UmsAdminRoleRelationService.java",
+          "sha256": "be3c100e87a0fb59b37117ded10ab0817a34108aae96eace7e99e628b4344474",
+          "lines": 11
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/UmsAdminService.java",
+          "sha256": "091c206d92298001743a3d8a6de33d37640433e91e17d284a442ba4e8052c485",
+          "lines": 89
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/UmsMenuService.java",
+          "sha256": "25cddf606baebb173b114ea20a98f311033af3b63968474c62df39f13730c6ac",
+          "lines": 40
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/UmsResourceCategoryService.java",
+          "sha256": "b6f7934d8d80ee3bb62fbbc0d43c774039ea900841edbe7f6607c2a317a30ad0",
+          "lines": 24
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/UmsResourceService.java",
+          "sha256": "085b74f6cf0dd3a8d28a1cfc6dd280fb2813ff8c0db39eb9a2369689e399b3b0",
+          "lines": 34
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/UmsRoleMenuRelationService.java",
+          "sha256": "4ad2b3d2eaec178a5dc4c7114fee26f7c8013e9aaeb8abf7870b057335106e75",
+          "lines": 11
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/UmsRoleResourceRelationService.java",
+          "sha256": "2af0175291e8619e6af9ad7cb4e76a956c73ca22af8b7afb98b0d887aa909187",
+          "lines": 11
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/UmsRoleService.java",
+          "sha256": "0965b837152cfb9479b03d9bbd0255af404d08da8e7dacd4a3a522f4d48ff435",
+          "lines": 58
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsAdminCacheServiceImpl.java",
+          "sha256": "006af5fde5cc13fbe98c84b95bba192be8b8dd3317dcdb107da0cdd8d696cf36",
+          "lines": 115
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsAdminRoleRelationServiceImpl.java",
+          "sha256": "9363116c0fb7ffe1026fa659940e150936426e54a8eba2fd7a863c5c3f232cfb",
+          "lines": 15
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsAdminServiceImpl.java",
+          "sha256": "99d0cae64d07c34435d8fffef8be472f513905769c4178d7cc60a0595db53aa3",
+          "lines": 271
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsMenuServiceImpl.java",
+          "sha256": "e9fad89b9ff6d72801bb90c543586b41e080d6896e39238aa93eb60667903563",
+          "lines": 94
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsResourceCategoryServiceImpl.java",
+          "sha256": "b61cad9c4cc5117991179016e696407c4185e424007ecd8a3e5f115cc301f07c",
+          "lines": 32
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsResourceServiceImpl.java",
+          "sha256": "cd3c5bbbb10f5ac9185577667449ea4732863fa6295eba875e31931b28de90cd",
+          "lines": 62
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsRoleMenuRelationServiceImpl.java",
+          "sha256": "7756da3384b7c3e6794d51b85f668615db195e67c57dc9c1d4a4864ffcf92bcd",
+          "lines": 15
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsRoleResourceRelationServiceImpl.java",
+          "sha256": "60373d629effb42c178950e0f2d80abd34f4255f77b4f932cbf4182c0ad5f41c",
+          "lines": 15
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsRoleServiceImpl.java",
+          "sha256": "236dfcf3f01fc5d9b770c48e76e5dee5b00f3adf38ce340a97042bc4e354eeec",
+          "lines": 116
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/annotation/CacheException.java",
+          "sha256": "d607de90902574619a97d69e8ece83c35e6ea35565c8653f0f8ca2e827664d96",
+          "lines": 12
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/aspect/RedisCacheAspect.java",
+          "sha256": "ce2007d98ffe4ef7e61221a2c8fdaf764ddd7cd4d8f2c1f29d73b16e90fe7f57",
+          "lines": 50
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/component/DynamicAccessDecisionManager.java",
+          "sha256": "87577cc8be62dfb3fa8bf52fd7b9d44b585766d4d138d49ab43f7a01202d42c6",
+          "lines": 51
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/component/DynamicSecurityFilter.java",
+          "sha256": "81dcc8e49baf9153cb5ca2e92df3577272505d579828be59884f40ef25389064",
+          "lines": 79
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/component/DynamicSecurityMetadataSource.java",
+          "sha256": "33f826554f3e2ffe98478f2947e848a1928c80c322ef03e471987d06b0523fe4",
+          "lines": 64
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/component/DynamicSecurityService.java",
+          "sha256": "391399329868dc3f52872e921c62d49159ccb426bf1e03f107bf70a908daaf72",
+          "lines": 16
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/component/JwtAuthenticationTokenFilter.java",
+          "sha256": "973cb5c284d86f85caceaea65a7afb4b5d4f8c0f680361a5bf018e2c2b4251f8",
+          "lines": 58
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/component/RestAuthenticationEntryPoint.java",
+          "sha256": "154e653f417bb4d83455aa8cc479e4acdc37b6b969e8f25222274c0ebe429c82",
+          "lines": 27
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/component/RestfulAccessDeniedHandler.java",
+          "sha256": "5a49c5b19232d696787b9cc2aa0b45764a64087560bce21574a00f3fbf4fa75e",
+          "lines": 29
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/config/CommonSecurityConfig.java",
+          "sha256": "1be1143f794d4426f8b8cccf8e2c45102ee5531068fe8b7533973db2aa884303",
+          "lines": 62
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/config/IgnoreUrlsConfig.java",
+          "sha256": "0e7b47301115c428e02fc4cc62894f0f6c5ac73c386403bf9054eca183e3e247",
+          "lines": 21
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/config/SecurityConfig.java",
+          "sha256": "e9d5f6008e43750bf91189943778423ac1bf92ba74982e6545e073926a2b8dd2",
+          "lines": 80
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/util/JwtTokenUtil.java",
+          "sha256": "0d1c083bf3e3d7c56d915c1164a332c6c5bcb2c3b5a638664521ae2b2979cd63",
+          "lines": 170
+        },
+        {
+          "path": "src/main/java/com/macro/mall/tiny/security/util/SpringUtil.java",
+          "sha256": "c9c76f175e97a6231b0893503d5360cbdd609f37a5f5e3786e66f9f11aa52eac",
+          "lines": 44
+        },
+        {
+          "path": "src/main/resources/application-dev.yml",
+          "sha256": "335cf620fcaf18a58daf1d8fad59741b9814e96081f2bd3d95481c6942e266c0",
+          "lines": 16
+        },
+        {
+          "path": "src/main/resources/application-prod.yml",
+          "sha256": "ab67c7b55a21e83675166fa0b4248e0de3690d77e217636c84b7134090203bcd",
+          "lines": 18
+        },
+        {
+          "path": "src/main/resources/application.yml",
+          "sha256": "e98d158e952f69f3b36e89fc0bc685f81678158a506123f1b3ece2e36e70d167",
+          "lines": 54
+        },
+        {
+          "path": "src/main/resources/generator.properties",
+          "sha256": "27000f60170b5e9bb1bda01494075966ae35b9feac5f76a7421eba2635bde1c2",
+          "lines": 5
+        },
+        {
+          "path": "src/main/resources/mapper/ums/UmsAdminLoginLogMapper.xml",
+          "sha256": "9410ba9b8e5ccc09e8c142f4421153408ab1531e23569f6b4d39c20324263f05",
+          "lines": 15
+        },
+        {
+          "path": "src/main/resources/mapper/ums/UmsAdminMapper.xml",
+          "sha256": "e3b9923f23839ebe6a64a74b858bbb1898798f04ed87052c8b5274b476787a83",
+          "lines": 28
+        },
+        {
+          "path": "src/main/resources/mapper/ums/UmsAdminRoleRelationMapper.xml",
+          "sha256": "7710703dde3a8ff8fa54ec66bfe2bcc2cf59e23b8e0a96972a2a1102aa626a7c",
+          "lines": 12
+        },
+        {
+          "path": "src/main/resources/mapper/ums/UmsMenuMapper.xml",
+          "sha256": "a08a6d7eafa9003dcdcfede24e25dd7da5884f28fedc3625f5e0e4d60ec7b4e7",
+          "lines": 61
+        },
+        {
+          "path": "src/main/resources/mapper/ums/UmsResourceCategoryMapper.xml",
+          "sha256": "fa92ae2f932489cf75933f777a8c75115245c3b0e26a14ef8c98025143ba6c48",
+          "lines": 13
+        },
+        {
+          "path": "src/main/resources/mapper/ums/UmsResourceMapper.xml",
+          "sha256": "93dbd6614381a64beb231caebedab3a54e788fbfb10fdc80964821364d0565cb",
+          "lines": 53
+        },
+        {
+          "path": "src/main/resources/mapper/ums/UmsRoleMapper.xml",
+          "sha256": "c89e97ddbad4ac7bb0014b0922a170946737335de7b1273373334df6ba02d5ee",
+          "lines": 22
+        },
+        {
+          "path": "src/main/resources/mapper/ums/UmsRoleMenuRelationMapper.xml",
+          "sha256": "cc0628490933bc4789024db503a4f804f3254333ec5cc6ae790549fc33cb419a",
+          "lines": 12
+        },
+        {
+          "path": "src/main/resources/mapper/ums/UmsRoleResourceRelationMapper.xml",
+          "sha256": "d580b155d9d62fec8b08eb25d5bff52ebf325a517b3e8ec8f1d224d41208387e",
+          "lines": 11
+        },
+        {
+          "path": "src/test/java/com/macro/mall/tiny/MallTinyApplicationTests.java",
+          "sha256": "ce9a1285e35c66eea2553047c3e88e2587ffbbfe57fb837a34d6970d192e62c2",
+          "lines": 13
+        }
+      ],
+      "manifest_sha256": "b5f029bdb842db35f1347e2c809168ad6b4295ba236d56b1f26f358af4b6b1e9"
+    }
+  ],
+  "cases": [
+    {
+      "id": "petclinic-entry",
+      "repo_id": "spring-petclinic",
+      "category": "entry",
+      "question": "这个应用的生产启动入口是什么，如何启动 Spring Boot？请区分测试入口。",
+      "expected_facts": [
+        "PetClinicApplication.main调用SpringApplication.run(PetClinicApplication.class,args)。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java",
+            "start": 32,
+            "end": 34,
+            "content_sha256": "e80b59aaf96a709a86708d7c93b13328ebb618382653c3b27aef80f830e6fb4a"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "petclinic-owner-search",
+      "repo_id": "spring-petclinic",
+      "category": "cross-file",
+      "question": "按姓氏查找主人时，Controller如何构造分页并调用Repository？默认每页多少条？",
+      "expected_facts": [
+        "OwnerController调用findPaginatedForOwnersLastName，页码至少1，PageRequest从0开始，每页5条。",
+        "OwnerRepository声明findByLastNameStartingWith并继承JpaRepository。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+            "start": 141,
+            "end": 147,
+            "content_sha256": "a2aa5646dc6520d3e61deedb444044a7297cf420fec4fad9b6bed3e0e9148524"
+          }
+        ],
+        [
+          {
+            "path": "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+            "start": 36,
+            "end": 47,
+            "content_sha256": "31fc4e14c3e74021cc35679a11e619ab72afe482d508ae5a6b39f257e1a68ad5"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "petclinic-visit",
+      "repo_id": "spring-petclinic",
+      "category": "cross-file",
+      "question": "新建就诊记录验证通过后，VisitController与Owner如何协作保存？",
+      "expected_facts": [
+        "Controller调用owner.addVisit(petId,visit)，再owners.save(owner)。",
+        "Owner.addVisit检查参数与Pet存在，调用pet.addVisit。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+            "start": 108,
+            "end": 112,
+            "content_sha256": "78567638bca1470faf5730de0ff7db5f4e14f7a837f38638ae3bdb874d91ee7b"
+          }
+        ],
+        [
+          {
+            "path": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+            "start": 176,
+            "end": 186,
+            "content_sha256": "61df071e23e0e1f327bb6ad03df081b985c35a593320ab4a1cf5dde4b958134b"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "petclinic-config",
+      "repo_id": "spring-petclinic",
+      "category": "config",
+      "question": "默认数据库标识是什么，初始化schema和data文件路径如何由它组成？",
+      "expected_facts": [
+        "application.properties的database=h2；schema/data路径包含${database}。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/resources/application.properties",
+            "start": 2,
+            "end": 4,
+            "content_sha256": "8e003df927c64569503e40d120a1ad6d724576557e07dc1861d57898689266de"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "petclinic-owner-missing",
+      "repo_id": "spring-petclinic",
+      "category": "exception",
+      "question": "展示主人详情时，如果findById返回空，showOwner如何处理？",
+      "expected_facts": [
+        "showOwner通过Optional.orElseThrow抛IllegalArgumentException，不返回空Owner。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+            "start": 179,
+            "end": 187,
+            "content_sha256": "258492dc05eb3c57cdc3096d907c2e9cf6a1ff50fdba6efa55eb3c67de19cb0e"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "petclinic-pet-validator",
+      "repo_id": "spring-petclinic",
+      "category": "exception",
+      "question": "PetValidator如何处理宠物名为空和长度超过30的情况？",
+      "expected_facts": [
+        "空名rejectValue name required；超过MAX_NAME_LENGTH=30则name size。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java",
+            "start": 36,
+            "end": 49,
+            "content_sha256": "e80b3fb8975c9049a94b84338424e87f549fb0dcc132e322912c41633b631c83"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "petclinic-runtime-db",
+      "repo_id": "spring-petclinic",
+      "category": "no-answer",
+      "question": "仅凭这个源码仓库，能确定我线上实例当前使用哪台数据库服务器、是否覆盖默认配置吗？",
+      "expected_facts": [],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/resources/application.properties",
+            "start": 2,
+            "end": 4,
+            "content_sha256": "8e003df927c64569503e40d120a1ad6d724576557e07dc1861d57898689266de"
+          }
+        ]
+      ],
+      "answerable": false,
+      "acceptable_uncertainties": [
+        "只能说明默认源码配置，不能确定部署环境、覆盖值和实时连接。"
+      ],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "petclinic-runtime-overload",
+      "repo_id": "spring-petclinic",
+      "category": "no-answer",
+      "question": "Owner有多个getPet重载。只给方法名getPet，能确定线上某次请求执行了哪个重载以及返回了哪只宠物吗？",
+      "expected_facts": [],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+            "start": 147,
+            "end": 158,
+            "content_sha256": "497d373032d58fe90ee95523aa0a6cd5793489a4f1d0c5f069010c9003ef85fd"
+          }
+        ]
+      ],
+      "answerable": false,
+      "acceptable_uncertainties": [
+        "需调用点及请求/数据，重载声明不能证明线上执行或返回值。"
+      ],
+      "ambiguity": true,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "flask-entry",
+      "repo_id": "flask",
+      "category": "entry",
+      "question": "python -m flask从哪个模块进入CLI，最终调用哪个main？",
+      "expected_facts": [
+        "__main__.py导入.cli.main并调用；cli.main调用cli.main()对象入口。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/flask/__main__.py",
+            "start": 1,
+            "end": 3,
+            "content_sha256": "565c250cf5054267bfa69292eddd5c37eff0c37c69311d9618e3d5a9551c319a"
+          }
+        ],
+        [
+          {
+            "path": "src/flask/cli.py",
+            "start": 1121,
+            "end": 1122,
+            "content_sha256": "3ce7e69224f9911d2368576d8d2636e55191585be61b570379a866d7eb8052c7"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "flask-session-open",
+      "repo_id": "flask",
+      "category": "cross-file",
+      "question": "请求上下文首次访问session时如何委托默认session接口？未能创建session怎么办？",
+      "expected_facts": [
+        "AppContext._get_session取app.session_interface调用open_session；返回None则make_null_session。",
+        "Flask默认session_interface为SecureCookieSessionInterface；该接口从签名cookie加载。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/flask/ctx.py",
+            "start": 381,
+            "end": 394,
+            "content_sha256": "d4cdf45f1255ffef8d9e9b801a766264b238563e9aca6363040582cacab03b5d"
+          }
+        ],
+        [
+          {
+            "path": "src/flask/app.py",
+            "start": 250,
+            "end": 250,
+            "content_sha256": "55b3f5bd1509fc4480de0987e3d24b4d1ea3538c51490c0fb5751c0f59a17664"
+          }
+        ],
+        [
+          {
+            "path": "src/flask/sessions.py",
+            "start": 323,
+            "end": 335,
+            "content_sha256": "ac5200d333a3383c35697dd92f9f961c6ef99d3807664d92342cb4d25297667a"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "flask-test-session",
+      "repo_id": "flask",
+      "category": "cross-file",
+      "question": "FlaskClient.session_transaction怎样打开、交还并保存session？默认后端是什么？",
+      "expected_facts": [
+        "测试上下文里调用open_session，yield sess后创建response，非null session调用save_session。",
+        "默认后端SecureCookieSessionInterface使用签名cookie。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/flask/testing.py",
+            "start": 165,
+            "end": 179,
+            "content_sha256": "9a6a39905fc26ff870b29b5bb15f784647e0f67ca60c6216dc2d65feec67f7ca"
+          }
+        ],
+        [
+          {
+            "path": "src/flask/app.py",
+            "start": 250,
+            "end": 250,
+            "content_sha256": "55b3f5bd1509fc4480de0987e3d24b4d1ea3538c51490c0fb5751c0f59a17664"
+          }
+        ],
+        [
+          {
+            "path": "src/flask/sessions.py",
+            "start": 284,
+            "end": 287,
+            "content_sha256": "5e461d8dc52b428f86370c94c22dbea379a7154fae4f7a2bb0e084506453e259"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "flask-propagate",
+      "repo_id": "flask",
+      "category": "config",
+      "question": "PROPAGATE_EXCEPTIONS默认值是什么？为None时handle_exception如何决定是否继续抛出？",
+      "expected_facts": [
+        "默认None；handle_exception回退self.testing or self.debug，为真重新抛出。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/flask/app.py",
+            "start": 209,
+            "end": 209,
+            "content_sha256": "e5b812baad5289d76c5a37f5f2b018f212d6fff401fa292d0e43fcaa43d3e5f5"
+          }
+        ],
+        [
+          {
+            "path": "src/flask/app.py",
+            "start": 927,
+            "end": 939,
+            "content_sha256": "257371bc4e0c0faf18170b3d11ef8f78667206b45d67ef51f5b4f1fa992d7862"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "flask-user-exception",
+      "repo_id": "flask",
+      "category": "exception",
+      "question": "handle_user_exception如何区分HTTPException与普通异常？未找到处理器怎么办？",
+      "expected_facts": [
+        "未trap的HTTPException委托handle_http_exception；其他情况找handler，找不到raise，否则ensure_sync调用。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/flask/app.py",
+            "start": 887,
+            "end": 896,
+            "content_sha256": "2228049b1804d6d84eb39e1f87947a035344fbb809a83ee412679bf5f5964d72"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "flask-invalid-cookie",
+      "repo_id": "flask",
+      "category": "exception",
+      "question": "默认cookie session后端遇到缺少cookie或BadSignature时分别返回什么？",
+      "expected_facts": [
+        "缺少cookie返回新session_class；BadSignature也返回空的新session_class，不传播签名错误。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/flask/sessions.py",
+            "start": 327,
+            "end": 336,
+            "content_sha256": "12f70484e143ced38754c6f58f2d41959a775d670bcbea3d2702841eae703e92"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "flask-runtime-key",
+      "repo_id": "flask",
+      "category": "no-answer",
+      "question": "仅凭Flask框架源码能告诉我生产应用实际SECRET_KEY值以及最近一次轮换时间吗？",
+      "expected_facts": [],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/flask/app.py",
+            "start": 210,
+            "end": 211,
+            "content_sha256": "0252b9d8c5e6105e00878d04a0681e51094e8414e0a0a3a2f5a841bffa5afc36"
+          }
+        ]
+      ],
+      "answerable": false,
+      "acceptable_uncertainties": [
+        "框架默认None不能证明应用实际密钥或轮换历史，不读取凭证。"
+      ],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "flask-runtime-session",
+      "repo_id": "flask",
+      "category": "no-answer",
+      "question": "仓库里多个open_session定义，能仅凭它们确定我的生产应用一定采用哪一个自定义后端、当前用户session内容吗？",
+      "expected_facts": [],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/flask/app.py",
+            "start": 250,
+            "end": 250,
+            "content_sha256": "55b3f5bd1509fc4480de0987e3d24b4d1ea3538c51490c0fb5751c0f59a17664"
+          }
+        ]
+      ],
+      "answerable": false,
+      "acceptable_uncertainties": [
+        "默认接口可替换；未知应用配置、cookie及运行状态，不能唯一确定。"
+      ],
+      "ambiguity": true,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "mall-entry",
+      "repo_id": "mall-tiny",
+      "category": "entry",
+      "question": "mall-tiny生产启动类及Spring Boot启动调用在哪里？",
+      "expected_facts": [
+        "MallTinyApplication.main调用SpringApplication.run。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/MallTinyApplication.java",
+            "start": 9,
+            "end": 11,
+            "content_sha256": "19fd267483ea0718f3e60ddefd44cf7e950ef3033bdfc6c4198e2721d25d9e50"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "mall-login",
+      "repo_id": "mall-tiny",
+      "category": "cross-file",
+      "question": "/admin/login如何从控制器进入服务并生成token？只说明代码明确表达的路径。",
+      "expected_facts": [
+        "Controller将用户名密码传adminService.login；非空token放入token/tokenHead map。",
+        "UmsAdminServiceImpl.login加载用户、校验密码/启用状态、设置Authentication、调用jwtTokenUtil.generateToken。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/modules/ums/controller/UmsAdminController.java",
+            "start": 62,
+            "end": 72,
+            "content_sha256": "15dc99f65c21da86dc87b763f7c23333fad9fe46e38aac133b2ce391d0afd01b"
+          }
+        ],
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsAdminServiceImpl.java",
+            "start": 99,
+            "end": 118,
+            "content_sha256": "d4cff7fc88c5825e0cea0a3159e1a8410c0071852430d8570e839c109e1f716c"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "mall-password-error",
+      "repo_id": "mall-tiny",
+      "category": "cross-file",
+      "question": "登录时密码校验失败后，Asserts、ApiException和全局处理器如何衔接？",
+      "expected_facts": [
+        "密码失败调用Asserts.fail；它抛ApiException，ApiException继承RuntimeException。",
+        "GlobalExceptionHandler处理ApiException，有errorCode用其返回failed，否则用message。不能误认为仅由AuthenticationException catch处理。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsAdminServiceImpl.java",
+            "start": 99,
+            "end": 118,
+            "content_sha256": "d4cff7fc88c5825e0cea0a3159e1a8410c0071852430d8570e839c109e1f716c"
+          }
+        ],
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/common/exception/Asserts.java",
+            "start": 11,
+            "end": 13,
+            "content_sha256": "d3d9b9fa82d98520c607ded964236e2a5970face13a462b472760641b1f0b087"
+          }
+        ],
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/common/exception/ApiException.java",
+            "start": 10,
+            "end": 11,
+            "content_sha256": "982151a1ace6c23c813fb64cb28a4f704ae983d9aec5b3b427176a04c77b2990"
+          }
+        ],
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/common/exception/GlobalExceptionHandler.java",
+            "start": 21,
+            "end": 26,
+            "content_sha256": "1206c4dab1c4b1a650a13e7318e7055fccb498f6729206e477c7d2e3cddb0cb3"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "mall-expiration",
+      "repo_id": "mall-tiny",
+      "category": "config",
+      "question": "JWT默认有效期配置是多少，JwtTokenUtil如何注入并换算到过期时间？",
+      "expected_facts": [
+        "application.yml jwt.expiration=604800；@Value注入expiration，生成过期Date时乘1000加当前毫秒。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/resources/application.yml",
+            "start": 27,
+            "end": 27,
+            "content_sha256": "1b3b2f045272b89a8b68a67931283398aa1ce32da6a065e498f599e799307b4a"
+          }
+        ],
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/security/util/JwtTokenUtil.java",
+            "start": 34,
+            "end": 35,
+            "content_sha256": "d2a5bea12b3d56a117516448b3abaed05a1ccd670afaa9df3b4072304b47efec"
+          }
+        ],
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/security/util/JwtTokenUtil.java",
+            "start": 69,
+            "end": 71,
+            "content_sha256": "19c0746f066fe40b7b2c95967a7ff2ce96ef3e7c104e127bc54d956bdb6b9baf"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "mall-validation-error",
+      "repo_id": "mall-tiny",
+      "category": "exception",
+      "question": "全局处理器的两个handleValidException重载分别处理什么，怎样构造返回消息？",
+      "expected_facts": [
+        "分别处理MethodArgumentNotValidException与BindException；取首个FieldError拼field和defaultMessage，CommonResult.validateFailed。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/common/exception/GlobalExceptionHandler.java",
+            "start": 30,
+            "end": 41,
+            "content_sha256": "ef206f1547fa3afc7e7061b1223813f8595f096c7b0bf10e6696e7db581a5a01"
+          }
+        ],
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/common/exception/GlobalExceptionHandler.java",
+            "start": 44,
+            "end": 55,
+            "content_sha256": "484fc0d7c80ce694fefcdd3b46c2b97fdea0ea2bb270b07d9541981c8c4f1c8a"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": true,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "mall-auth-error",
+      "repo_id": "mall-tiny",
+      "category": "exception",
+      "question": "未认证和无权限的两个安全处理器怎样输出JSON？业务code分别由什么决定？不要把JSON code当成HTTP状态设置。",
+      "expected_facts": [
+        "RestAuthenticationEntryPoint输出CommonResult.unauthorized；RestfulAccessDeniedHandler输出forbidden。",
+        "ResultCode定义401和403，处理器片段只写响应体，未调用setStatus。"
+      ],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/security/component/RestAuthenticationEntryPoint.java",
+            "start": 19,
+            "end": 27,
+            "content_sha256": "aae9b298b7018ec44ac85cd57f1819f78617f6bd90a56cd0f5714f851af86370"
+          }
+        ],
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/security/component/RestfulAccessDeniedHandler.java",
+            "start": 19,
+            "end": 29,
+            "content_sha256": "555322f28443216000639957ded98145558515bbeeb4903cdd00bf2fcc0d735a"
+          }
+        ],
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/common/api/ResultCode.java",
+            "start": 11,
+            "end": 12,
+            "content_sha256": "0e0518c3577f44a3326f67df310983cef7d69199bef3b80a153a7cea2ab1ce0a"
+          }
+        ]
+      ],
+      "answerable": true,
+      "acceptable_uncertainties": [],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "mall-runtime-redis",
+      "repo_id": "mall-tiny",
+      "category": "no-answer",
+      "question": "只读这个仓库能确定生产Redis当前是否在线、命中率和延迟吗？",
+      "expected_facts": [],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/resources/application.yml",
+            "start": 30,
+            "end": 36,
+            "content_sha256": "7088fde4af0c3abe5f0c06b84ede98933cd1070a9adf66c4c1f9911cb7c4a000"
+          }
+        ]
+      ],
+      "answerable": false,
+      "acceptable_uncertainties": [
+        "静态配置不能提供实时在线状态、命中率或延迟，需运行监控数据。"
+      ],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    },
+    {
+      "id": "mall-runtime-token",
+      "repo_id": "mall-tiny",
+      "category": "no-answer",
+      "question": "能从静态源码给出某用户当前有效JWT及其真实登录时间吗？",
+      "expected_facts": [],
+      "evidence_groups": [
+        [
+          {
+            "path": "src/main/java/com/macro/mall/tiny/modules/ums/service/impl/UmsAdminServiceImpl.java",
+            "start": 99,
+            "end": 118,
+            "content_sha256": "d4cff7fc88c5825e0cea0a3159e1a8410c0071852430d8570e839c109e1f716c"
+          }
+        ]
+      ],
+      "answerable": false,
+      "acceptable_uncertainties": [
+        "源码只描述生成流程，不包含当前用户身份、实际token与运行事件。"
+      ],
+      "ambiguity": false,
+      "reference_query": null,
+      "annotation_source": "assistant_draft"
+    }
+  ]
+}

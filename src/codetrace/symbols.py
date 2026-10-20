@@ -78,7 +78,11 @@ def _java(file):
 
 def _python(file):
     text, root = file["text"], file["tree"]
-    module = ".".join(PurePosixPath(file["path"]).with_suffix("").parts)
+    parts = PurePosixPath(file["path"]).with_suffix("").parts
+    # Conventional src layout; this is lexical module naming, not sys.path execution.
+    if parts and parts[0] == "src":
+        parts = parts[1:]
+    module = ".".join(parts)
     if module.endswith(".__init__"):
         module = module[:-9]
     imports = []
@@ -159,7 +163,7 @@ def _resolve(source, base, types):
                 bound = True
                 names.append(target + ("." + tail if tail else ""))
     if not bound:
-        names = [source["_package"] + "." + name]
+        names = [source["qualified_name"].rsplit(".", 1)[0] + "." + name, source["_package"] + "." + name]
     candidates = matching(names)
     return candidates, "ambiguous" if len(candidates) > 1 else ("resolved" if candidates else "unresolved")
 

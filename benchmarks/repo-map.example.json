@@ -1,0 +1,5 @@
+{
+  "spring-petclinic": "../codetrace-benchmarks/spring-petclinic",
+  "flask": "../codetrace-benchmarks/flask",
+  "mall-tiny": "../codetrace-benchmarks/mall-tiny"
+}

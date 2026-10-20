@@ -74,7 +74,11 @@ def _inside(root, relative):
 
 
 def load_dataset(path: Path):
-    data = Dataset.model_validate(json.loads(path.read_text(encoding="utf-8")))
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    if raw.get("schema_version") == 2:
+        from codetrace.benchmark import load_benchmark
+        return load_benchmark(path)
+    data = Dataset.model_validate(raw)
     cases = data.cases
     if data.schema_version != 1 or len(cases) < 10 or len({c.id for c in cases}) != len(cases):
         raise ValueError("Invalid dataset version, size or duplicate IDs")
@@ -233,6 +237,18 @@ def save_report(report, output):
 
 
 def main():
+    import sys
+    # Preserve the v1 entry point, dispatch explicit v2 input to its own protocol.
+    if "--dataset" in sys.argv:
+        position = sys.argv.index("--dataset") + 1
+        if position < len(sys.argv):
+            try:
+                version = json.loads(Path(sys.argv[position]).read_text(encoding="utf-8-sig")).get("schema_version")
+            except (OSError, ValueError):
+                version = None
+            if version == 2:
+                from codetrace.paired_evaluation import main as paired_main
+                return paired_main()
     parser = argparse.ArgumentParser(description="CodeTrace evaluation: offline by default")
     parser.add_argument("--dataset", type=Path, default=DEFAULT_DATASET)
     parser.add_argument("--live", action="store_true")

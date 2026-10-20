@@ -104,3 +104,12 @@ def test_long_signature_and_hints(tmp_path):
     data = ToolRegistry(Repository(tmp_path), "indexed").execute("find_symbol", {"name": "run"})["data"]["matches"][0]
     assert data["truncated"] and len(data["signature"]) == 300 and len(data["imports"]) == 10
     assert "_imports" not in json.dumps(data)
+
+
+def test_python_src_layout_imports(tmp_path):
+    source(tmp_path, "src/pkg/base.py", "class Base: pass\n")
+    source(tmp_path, "src/pkg/child.py", "from pkg.base import Base\nclass Child(Base): pass\n")
+    registry = ToolRegistry(Repository(tmp_path), "indexed")
+    symbol = registry.execute("find_symbol", {"name": "Child"})["data"]["matches"][0]
+    edges = registry.execute("find_related_symbols", {"symbol_id": symbol["symbol_id"], "relation": "extends"})["data"]["matches"]
+    assert edges[0]["status"] == "resolved" and edges[0]["targets"][0]["qualified_name"] == "pkg.base.Base"
